@@ -8,7 +8,7 @@
 #
 from pathlib import Path
 
-here = pathlib.Path(__file__).parent.resolve()
+here = Path(__file__).parent.resolve()
 
 # load elements of version.py
 exec(open(here / '..' / '..' / 'my_package' / 'version.py').read())
