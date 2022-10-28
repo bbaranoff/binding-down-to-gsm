@@ -1,22 +1,21 @@
+# custom, package specific ignores
+.DS_Store
+.DS_Store?
+pymakr.conf
+tests/
+config/config*.py
+thinking/
+*.bin
+.idea
+*.bak
 
-# Created by https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks
+*.o
 
-### JupyterNotebooks ###
-# gitignore template for Jupyter Notebooks
-# website: http://jupyter.org/
+.vagrant/
 
-.ipynb_checkpoints
-*/.ipynb_checkpoints/*
+# meson files under development
+untitled.meson.build
 
-# IPython
-profile_default/
-ipython_config.py
-
-# Remove previous ipynb_checkpoints
-#   git rm -r .ipynb_checkpoints/
-
-### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -33,7 +32,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# micropython libs are stored in lib/
+# lib/
 lib64/
 parts/
 sdist/
@@ -79,6 +79,7 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+*.sqlite3
 
 # Flask stuff:
 instance/
@@ -95,8 +96,11 @@ docs/_build/
 target/
 
 # Jupyter Notebook
+.ipynb_checkpoints
 
 # IPython
+profile_default/
+ipython_config.py
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
@@ -152,5 +156,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-
-# End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
