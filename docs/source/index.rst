@@ -8,7 +8,7 @@ Contents
    :maxdepth: 1
 
    README
-   usage
+   USAGE
    my_package
 
 Indices and tables

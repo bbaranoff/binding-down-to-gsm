@@ -40,7 +40,9 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
+    'sphinx.ext.autosectionlabel',
 ]
+autosectionlabel_prefix_document = True
 
 # The suffix of source filenames.
 source_suffix = ['.rst', '.md']
