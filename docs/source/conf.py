@@ -1,13 +1,16 @@
 # Configuration file for the Sphinx documentation builder.
 
+import os
+import sys
+from pathlib import Path
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-from pathlib import Path
-
+sys.path.insert(0, os.path.abspath('../../'))
 here = Path(__file__).parent.resolve()
 
 # load elements of version.py
