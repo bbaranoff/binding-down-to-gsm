@@ -1,8 +1,8 @@
-My Package docs
+API
 ===================
 
-Modules
-----------
+.. autosummary::
+   :toctree: generated
 
 my_package.asdf module
 ---------------------------------
