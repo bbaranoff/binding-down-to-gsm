@@ -8,24 +8,6 @@ RTD Tutorial template
 
 Bla bla
 
-## Installation
+## Usage
 
-### Install required tools
-
-Python3 must be installed on your system. Check the current Python version
-with the following command
-
-```bash
-python --version
-python3 --version
-```
-
-Depending on which command `Python 3.x.y` (with x.y as some numbers) is
-returned, use that command to proceed.
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-
-pip install -r requirements.txt
-```
+See :ref:`usage:Usage`
