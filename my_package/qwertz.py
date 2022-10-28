@@ -20,7 +20,16 @@ class QWERTZ(object):
         """Print 'okay'"""
         print("okay")
 
-    def get_list_of_int(self, how_long: int) -> List[int]:
+    def get_list_of_int(self, how_long: int = 5) -> List[int]:
+        """
+        Get a list of integers.
+
+        :param      how_long:  How many integers, default 5
+        :type       how_long:  int
+
+        :returns:   The list of integers.
+        :rtype:     List[int]
+        """
         random_int_list = sample(range(0, 100), how_long)
 
         print('Generated random int list of length {}'.

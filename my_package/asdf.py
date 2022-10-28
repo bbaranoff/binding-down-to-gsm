@@ -22,4 +22,4 @@ class ASDF(object):
         :param      who:  The who
         :type       who:  str
         """
-        stdout.write("Hello {}".format(who))
+        stdout.write("Hello {}\n".format(who))
