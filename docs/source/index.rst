@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+Brainelectronics RTD Tutorial
 ===================================
 
 **Lumache** (/lu'make/) is a Python library for cooks and food lovers
@@ -20,3 +20,4 @@ Contents
 
    usage
    api
+   my_package
