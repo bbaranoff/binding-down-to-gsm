@@ -7,8 +7,8 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   README
-   USAGE
+   docs/README
+   docs/USAGE
    my_package
 
 Indices and tables
