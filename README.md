@@ -5,13 +5,13 @@
 ![Python](https://img.shields.io/badge/python3-Ok-green.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-MicroPython PyPi package template project with auto deploy
+Example RTD template project
 
 ---------------
 
 This GitHub template includes fictional Python library
 with some basic Sphinx docs.
 
-Read the tutorial here:
+The created documentation can be found at
 
-https://docs.readthedocs.io/en/stable/tutorial/
+https://brainelectronics-tutorial-template.readthedocs.io/en/latest/
