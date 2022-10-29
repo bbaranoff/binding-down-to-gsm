@@ -1,0 +1,16 @@
+# use fixed versions
+#
+# m2rr 0.2.3 takes any mistune and docutils version
+m2rr >=0.2.3,<1
+
+# mistune >=1.0.0 does not have 'BlockGrammar' anymore, required by m2rr
+mistune >=0.8.4,<1
+
+# fix docutils to a version working for all
+docutils >=0.14,<0.17
+
+# sphinx 5.3.0 requires Jinja2 >=3.0 and docutils >=0.14,<0.20
+sphinx >=5.0.0,<6
+
+# sphinx-rtd-theme >=1.0.0 would require docutils <0.18
+sphinx-rtd-theme >=1.0.0,<2

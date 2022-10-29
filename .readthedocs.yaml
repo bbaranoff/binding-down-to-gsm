@@ -1,0 +1,17 @@
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the version of Python and other tools you might need
+build:
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.9"
+  jobs:
+    post_install:
+      - pip install -r docs/requirements.txt
+    pre_build:
+      - python docs/convert_md2rst.py --destination docs/source/ --in_file docs/README.md --in_file docs/USAGE.md --in_file changelog.md -d -vvvvvv
