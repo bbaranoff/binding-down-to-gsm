@@ -10,4 +10,4 @@ Bla bla
 
 ## Usage
 
-See :ref:`usage:Usage`
+See :ref:`docs/usage:Usage`
