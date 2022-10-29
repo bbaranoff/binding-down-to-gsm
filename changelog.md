@@ -17,6 +17,13 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
 -->
 
 ## Released
+## [0.3.0] - 2022-10-29
+### Added
+- Add link to created documentation to root README
+
+### Fixed
+- Subtitle of root README does not reference MicroPython
+
 ## [0.2.0] - 2022-10-29
 ### Added
 - Docs badge to root README, see [#2][ref-issue-2]
@@ -37,8 +44,9 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
   files for Sphinx
 
 <!-- Links -->
-[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.2.0...main
+[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.3.0...main
 
+[0.3.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.3.0
 [0.2.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.2.0
 [0.1.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.1.0
 
