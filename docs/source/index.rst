@@ -10,6 +10,7 @@ Contents
    docs/README
    docs/USAGE
    my_package
+   changelog
 
 Indices and tables
 ==================

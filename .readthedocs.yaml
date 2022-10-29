@@ -14,4 +14,4 @@ build:
     post_install:
       - pip install -r docs/requirements.txt
     pre_build:
-      - python docs/convert_md2rst.py --destination docs/source/ --in_file docs/README.md --in_file docs/USAGE.md -d -vvvvvv
+      - python docs/convert_md2rst.py --destination docs/source/ --in_file docs/README.md --in_file docs/USAGE.md --in_file changelog.md -d -vvvvvv
