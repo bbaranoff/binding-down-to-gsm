@@ -11,10 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 ### Fixed
 -->
-
-<!-- ## [Unreleased] -->
+<!--
+RegEx for release version from file
+r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
+-->
 
 ## Released
+## [0.2.0] - 2022-10-29
+### Added
+- Docs badge to root README, see [#2][ref-issue-2]
+
+### Changed
+- Converted root README from Markdown to ReStructuredText
+
 ## [0.1.0] - 2022-10-29
 ### Added
 - This changelog file
@@ -28,8 +37,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   files for Sphinx
 
 <!-- Links -->
-[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.1.0...main
+[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.2.0...main
 
+[0.2.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.2.0
 [0.1.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.1.0
 
-[ref-issue-1]: https://github.com/brainelectronics/rtd-tutorial-template/issues/1
+[ref-issue-2]: https://github.com/brainelectronics/rtd-tutorial-template/issues/2
