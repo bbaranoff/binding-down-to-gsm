@@ -17,6 +17,22 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
 -->
 
 ## Released
+## [0.4.0] - 2022-12-06
+### Added
+- Usage guide for building docs locally in root README
+- `changelog_link.rst` added to [docs](docs) to include this changelog from
+  its real location without further relocation before building the docs
+
+### Changed
+- Relocate files of `docs/source` into `docs` directly
+- Replace ReStructuredText references in Markdown files of [docs](docs)
+- `docutils >=0.14,<0.18` is required to build the docs
+- Sphinx extensions sorted aphabetically in [`config.py`](docs/config.py)
+
+### Removed
+- Documentation build process is no longer depending in `m2rr` package
+- Unused batch file and Makefile
+
 ## [0.3.0] - 2022-10-29
 ### Added
 - Add link to created documentation to root README
@@ -44,8 +60,9 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
   files for Sphinx
 
 <!-- Links -->
-[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.3.0...main
+[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.4.0...main
 
+[0.4.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.4.0
 [0.3.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.3.0
 [0.2.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.2.0
 [0.1.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.1.0
