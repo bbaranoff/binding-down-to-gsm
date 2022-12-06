@@ -7,10 +7,10 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   docs/README
-   docs/USAGE
+   README
+   USAGE
    my_package
-   changelog
+   changelog_link
 
 Indices and tables
 ==================
