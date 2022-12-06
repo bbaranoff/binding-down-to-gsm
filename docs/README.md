@@ -10,4 +10,4 @@ Bla bla
 
 ## Usage
 
-See :ref:`docs/usage:Usage`
+See [USAGE](USAGE.md) file

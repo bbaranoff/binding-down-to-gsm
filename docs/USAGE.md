@@ -15,9 +15,10 @@ asdf.print_hello(who='Carl')
 ```
 
 To get a list of random integers the
-:py:func:`my_package.qwertz.QWERTZ.get_list_of_int` function can be used. The list
-will contain 5 integers between 0 and 100 by default. The :py:attr:`how_long`
-argument can be used to change the number of elements in the returned list.
+[**`my_package.qwertz.QWERTZ.get_list_of_int`**](my_package.qwertz.QWERTZ.get_list_of_int)
+function can be used. The list will contain 5 integers between 0 and 100 by
+default. The `how_long` argument can be used to change the number of elements
+in the returned list.
 
 ## Create docs
 
