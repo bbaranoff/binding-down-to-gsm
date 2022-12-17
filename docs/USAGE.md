@@ -42,15 +42,6 @@ source .venv/bin/activate
 pip install -r docs/requirements.txt
 ```
 
-### Convert Markdown to ReStructuredText
-
-```bash
-python docs/convert_md2rst.py \
-	--destination docs/source/ \
-	--in_file docs/README.md \
-	--in_file other/nested/README.md
-```
-
 ### Sphinx link checks
 
 ```bash
