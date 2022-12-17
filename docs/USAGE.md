@@ -20,6 +20,18 @@ function can be used. The list will contain 5 integers between 0 and 100 by
 default. The `how_long` argument can be used to change the number of elements
 in the returned list.
 
+```{note} Notes require **no** arguments, so content can start here.
+```
+
+```{eval-rst}
+.. warning::
+    This is warning text. Use a warning for information the user must
+    understand to avoid negative consequences.
+
+    Warnings are formatted in the same way as notes. In the same way,
+    lines must be broken and indented under the warning tag.
+```
+
 ## Create docs
 
 ### Installation
@@ -42,29 +54,20 @@ source .venv/bin/activate
 pip install -r docs/requirements.txt
 ```
 
-### Convert Markdown to ReStructuredText
-
-```bash
-python docs/convert_md2rst.py \
-	--destination docs/source/ \
-	--in_file docs/README.md \
-	--in_file other/nested/README.md
-```
-
 ### Sphinx link checks
 
 ```bash
 sphinx-build \
-	docs/source docs/build/html \
-	-d docs/build/docs_doctree \
-	--color -blinkcheck -bhtml -W
+    docs/ docs/build/linkcheck \
+    -d docs/build/docs_doctree \
+    --color -blinkcheck -W
 ```
 
 ### Sphinx build
 
 ```bash
 sphinx-build \
-	docs/source docs/build/linkcheck \
-	-d docs/build/docs_doctree \
-    --color -W
+    docs/ docs/build/html \
+    -d docs/build/docs_doctree \
+    --color -bhtml -W
 ```
