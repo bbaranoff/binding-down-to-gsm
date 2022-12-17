@@ -46,16 +46,16 @@ pip install -r docs/requirements.txt
 
 ```bash
 sphinx-build \
-	docs/source docs/build/html \
-	-d docs/build/docs_doctree \
-	--color -blinkcheck -bhtml -W
+    docs/ docs/build/linkcheck \
+    -d docs/build/docs_doctree \
+    --color -blinkcheck -W
 ```
 
 ### Sphinx build
 
 ```bash
 sphinx-build \
-	docs/source docs/build/linkcheck \
-	-d docs/build/docs_doctree \
-    --color -W
+    docs/ docs/build/html \
+    -d docs/build/docs_doctree \
+    --color -bhtml -W
 ```
