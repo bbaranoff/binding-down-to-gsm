@@ -17,6 +17,16 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
 -->
 
 ## Released
+## [0.5.0] - 2022-12-17
+### Added
+- Example for ReStructuredText evaluation directive to show a warning and a notes highlighted text
+
+### Changed
+- Removed outdated command to convert Markdown files to ReStructuredText files
+
+### Fixed
+- Call to generate sphinx documentation in USAGE
+
 ## [0.4.0] - 2022-12-06
 ### Added
 - Usage guide for building docs locally in root README
@@ -60,8 +70,9 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
   files for Sphinx
 
 <!-- Links -->
-[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.4.0...main
+[Unreleased]: https://github.com/brainelectronics/rtd-tutorial-template/compare/0.5.0...main
 
+[0.5.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.5.0
 [0.4.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.4.0
 [0.3.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.3.0
 [0.2.0]: https://github.com/brainelectronics/rtd-tutorial-template/tree/0.2.0
