@@ -1,20 +1,5 @@
-Binding down to unsafe network
-===================================
-
-Contents
---------
-
-.. toctree::
-   :maxdepth: 1
-
-   USAGE
-
-Index
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-
+README
+======
 
 Binding down to unsafe network
 
