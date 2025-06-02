@@ -13,15 +13,8 @@ Index
 ==================
 
 .. raw:: html
-
-   <!-- MarkdownTOC -->
-
 -  `Getting started <#getting-started>`__
-
 .. raw:: html
-
-
-
 * :ref:`genindex`
 * :ref:`modindex`
 
