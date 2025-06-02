@@ -7,10 +7,8 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-   README
+   How_is_it_possible
    USAGE
-   my_package
-   changelog_link
 
 Indices and tables
 ==================

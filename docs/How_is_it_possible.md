@@ -1,12 +1,15 @@
-# Adventures in Telecommunications
+# How is it possible
 
 Binding down to unsafe network
 
 ---------------
+	
+This GitHub template includes fictional Python library
+with some basic Sphinx docs.
 
 The created documentation can be found at
 
-https://binding-down-to-unsafe-network.readthedocs.io/en/latest/
+https://brainelectronics-tutorial-template.readthedocs.io/en/latest/
 
 <!-- MarkdownTOC -->
 
@@ -18,7 +21,7 @@ https://binding-down-to-unsafe-network.readthedocs.io/en/latest/
 
 ## Getting started
 
-### How it is possible
+### Install required tools
 
 Below is an English‐language explanation of how the UE is forced to fall back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake Tracking Area Code (TAC) that is one higher or one lower than the “real” TAC, and because the `is_csfb` flag is set to true inside the `send_connection_release()` function. The snippet in question lives in **`rrc_ue.cc`** under **`void rrc::ue::send_connection_release()`**; it looks like this:
 
@@ -48,7 +51,7 @@ void rrc::ue::send_connection_release()
 
 ---
 
-## What this code does
+## What this code does (in plain English)
 
 1. **Context: why `send_connection_release()` is called**
 
