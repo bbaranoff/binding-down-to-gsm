@@ -1,27 +1,17 @@
-# How is it possible
+# README
 
 Binding down to unsafe network
 
 ---------------
 	
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
-
-The created documentation can be found at
-
-https://brainelectronics-tutorial-template.readthedocs.io/en/latest/
 
 <!-- MarkdownTOC -->
 
 - [Getting started](#getting-started)
-	- [Install required tools](#install-required-tools)
-	- [Create documentation](#create-documentation)
 
 <!-- /MarkdownTOC -->
 
 ## Getting started
-
-### Install required tools
 
 Below is an English‐language explanation of how the UE is forced to fall back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake Tracking Area Code (TAC) that is one higher or one lower than the “real” TAC, and because the `is_csfb` flag is set to true inside the `send_connection_release()` function. The snippet in question lives in **`rrc_ue.cc`** under **`void rrc::ue::send_connection_release()`**; it looks like this:
 
@@ -51,7 +41,7 @@ void rrc::ue::send_connection_release()
 
 ---
 
-## What this code does (in plain English)
+## What this code does ?
 
 1. **Context: why `send_connection_release()` is called**
 
@@ -128,7 +118,7 @@ void rrc::ue::send_connection_release()
 
 ---
 
-## Summary in English
+## Summary
 
 * We broadcast a second LTE cell whose Tracking Area Code (TAC) is set to “original\_TAC ± 1.” Because the UE sees a mismatched TAC, it camps on our fake LTE cell in **RRC Connected** state.
 
