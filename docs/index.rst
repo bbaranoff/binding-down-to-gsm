@@ -8,23 +8,8 @@ Contents
    :maxdepth: 1
 
    USAGE
-
-Index
-==================
-
 .. raw:: html
 -  `Getting started <#getting-started>`__
-.. raw:: html
-* :ref:`genindex`
-* :ref:`modindex`
-
-
-Binding down to unsafe network
-
---------------
-
-Getting started
----------------
 
 Below is an English‐language explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
