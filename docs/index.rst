@@ -23,9 +23,6 @@ Binding down to unsafe network
 
 --------------
 
-
-   <!-- /MarkdownTOC -->
-
 Getting started
 ---------------
 
