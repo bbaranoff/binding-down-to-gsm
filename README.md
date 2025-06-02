@@ -1,9 +1,4 @@
-# Template for the Read the Docs tutorial
-
-[![Documentation Status](https://readthedocs.org/projects/brainelectronics-tutorial-template/badge/?version=latest)](https://brainelectronics-tutorial-template.readthedocs.io/en/latest/?badge=latest)
-![Release](https://img.shields.io/github/v/release/brainelectronics/rtd-tutorial-template?include_prereleases&color=success)
-![Python](https://img.shields.io/badge/python3-Ok-green.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Adventures in Telecommunications
 
 Binding down to unsafe network
 
@@ -26,7 +21,7 @@ https://brainelectronics-tutorial-template.readthedocs.io/en/latest/
 
 ## Getting started
 
-### Install required tools
+### How it is possible
 
 Below is an English‐language explanation of how the UE is forced to fall back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake Tracking Area Code (TAC) that is one higher or one lower than the “real” TAC, and because the `is_csfb` flag is set to true inside the `send_connection_release()` function. The snippet in question lives in **`rrc_ue.cc`** under **`void rrc::ue::send_connection_release()`**; it looks like this:
 
@@ -56,7 +51,7 @@ void rrc::ue::send_connection_release()
 
 ---
 
-## What this code does (in plain English)
+## What this code does
 
 1. **Context: why `send_connection_release()` is called**
 
