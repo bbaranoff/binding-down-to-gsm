@@ -12,6 +12,16 @@ Contents
 Index
 ==================
 
+.. raw:: html
+
+   <!-- MarkdownTOC -->
+
+-  `Getting started <#getting-started>`__
+
+.. raw:: html
+
+
+
 * :ref:`genindex`
 * :ref:`modindex`
 
@@ -20,13 +30,6 @@ Binding down to unsafe network
 
 --------------
 
-.. raw:: html
-
-   <!-- MarkdownTOC -->
-
--  `Getting started <#getting-started>`__
-
-.. raw:: html
 
    <!-- /MarkdownTOC -->
 
