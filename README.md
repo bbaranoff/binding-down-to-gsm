@@ -3,13 +3,10 @@
 Binding down to unsafe network
 
 ---------------
-	
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
 
 The created documentation can be found at
 
-https://brainelectronics-tutorial-template.readthedocs.io/en/latest/
+https://binding-down-to-unsafe-network.readthedocs.io/en/latest/
 
 <!-- MarkdownTOC -->
 
