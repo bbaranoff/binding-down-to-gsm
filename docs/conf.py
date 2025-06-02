@@ -23,8 +23,8 @@ exec(open(here / '..' / 'my_package' / 'version.py').read())
 
 # -- Project information
 
-project = 'Brainelectronics RTD Tutorial'
-copyright = '2022, brainelectronics'
+project = 'Binding down to unsafe network'
+copyright = '2025, Bastien Baranoff'
 # author = 'brainelectronics'
 author = __author__
 
