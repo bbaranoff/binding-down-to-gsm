@@ -332,50 +332,6 @@ usually does **not** instantaneously re‐camp to LTE, for two reasons:
    not hop back to LTE “by itself” unless it actually sees a
    higher‐priority (allowed) cell in the same BCCH’s neighbor‐list or it
    runs out of reacquisition timers entirely.
-
-3.2. Forbidden PLMN → barred for some time, but not immediate reselect
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  After “PLMN not allowed,” the UE writes 001–01 into its **Local
-   FPLMN** list for a duration T3245 (usually several minutes).
-
--  While that PLMN is in the FPLMN, the UE treats any 2G/3G cell
-   broadcasting 001–01 as “barred” for reselection. In a normal
-   scenario, it would immediately drop that barred cell and look for
-   another allowed cell (e.g. another 2G PLMN or 3G or LTE).
-
--  But because **no other cells** are visible in its immediate vicinity
-   (recall—your fake BCCH does not advertise a valid LTE neighbor), it
-   has nowhere else to go. In other words:
-
-   -  It does **not** say “I’ll drop 2G and go register on LTE,” because
-      the 2G BCCH is still strongest—so it stays camped.
-   -  It does **not** see any “allowed” PLMN on that frequency, because
-      the only PLMN is 001–01 (now forbidden).
-   -  It does **not** see any 4G neighbor IE, because your fake 2G cell
-      never told it about LTE.
-
-According to 3GPP TS 23.122 (for GSM/UTRAN cell selection) and TS 36.304
-(for E-UTRAN), a barred PLMN cannot be reselected on that RAT, but the
-UE still must await the next “cell search” window. If it finds nothing
-else there, it remains stuck, nominally, on the barred BCCH until it
-detects a stronger/allowed candidate—then it finally hops to that. In
-practice:
-
-1. **PLMN 001–01 is barred** → the UE marks ARFCN 871/001–01 as
-   ineligible for camp.
-2. **Immediately afterward**, no other BCCH is strong enough (or none
-   was advertised), so the UE stays on ARFCN 871 (even though it’s
-   barred) because the reselection algorithm needs an “actual
-   replacement” before leaving.
-3. **Without LTE neighbor info**, the UE never realizes “hey, there’s a
-   valid LTE cell on frequency X” → so it never triggers a 4G
-   reselection event.
-4. Over time (T3245 expires), the UE might remove 001–01 from FPLMN and
-   try 2G 001–01 again—only to get “PLMN not allowed” again. Only once
-   it sees a real LTE neighbor or some other allowed 2G/3G PLMN will it
-   move.
-
 --------------
 
 4. Putting it all together
