@@ -325,7 +325,8 @@ usually does **not** instantaneously re‐camp to LTE, for two reasons:
 
 ..
 
-   [!TIP] “I’m camped on ARFCN 871 (2G), PLMN 001–01 (which I just
+.. tip::
+   “I’m camped on ARFCN 871 (2G), PLMN 001–01 (which I just
    marked forbidden), but I have no other candidate cell broadcasts in
    my BCCH. I must stay here until I find an alternative cell.” It will
    not hop back to LTE “by itself” unless it actually sees a
