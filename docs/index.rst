@@ -7,9 +7,9 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   The redirection part
-   Keeping the fallback
-   I am hurry
+   redirection
+   keep
+   hurry
 
 > Getting started
 

@@ -1,4 +1,4 @@
-# Keeping the fallback
+# Keep
 
 Below is a step‐by‐step explanation of what happens when you redirect a phone twice to the same ARFCN, first advertising a “real” operator MCC/MNC (so the UE attaches normally), then advertising MCC = 001, MNC = 01 (PLMN 001–01). In particular, we’ll see why the UE stays camped on 2G 001–01 (even though that PLMN is “not allowed” by its SIM) and never immediately falls back to 4G.
 

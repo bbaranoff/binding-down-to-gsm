@@ -1,4 +1,4 @@
-# The redirection part
+# redirection
 
 Binding down to unsafe network
 
