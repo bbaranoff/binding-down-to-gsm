@@ -42,3 +42,4 @@ python:
       extra_requirements:
         - docs
     - method: pip
+      path: docs/
