@@ -114,5 +114,8 @@ void rrc::ue::send_connection_release()
   2. setting `is_csfb = true` so that **every** RRC Connection Release includes a GERAN redirect,
      allows us to force the UE into 2G for roughly 60 seconds before it finally realizes “no real service here” and returns to LTE.
 
-This is why, in an interception scenario, the UE ends up on the fake 2G network for about one minute: it’s following the standard CSFB procedure (driven by `is_csfb = true` in `send_connection_release()`), but the interceptor never completes a valid 2G attach/Authentication/MSC handover. After its internal 2G timers time out (≈ 60 s), the UE reverts to LTE.
+This is why, in an interception scenario, the UE ends up on the fake 2G network for about one minute: it’s following the standard CSFB procedure (driven by `is_csfb = true` in `send_connection_release()`), but the interceptor never completes a valid 2G attach/Authentication/MSC handover. 
+
+> **Warning**
+After its internal 2G timers time out (≈ 60 s), the UE reverts to LTE.
 
