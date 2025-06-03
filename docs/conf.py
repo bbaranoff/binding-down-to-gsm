@@ -115,13 +115,10 @@ html_theme = 'classic'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-html_theme_options = {"dark"}
-/* anything related to the dark theme */
 html[data-theme="dark"] {
-
-    /* whatever you want to change */
-    background-color: black;
+background-color: black;
 }
+html_theme_options = {"dark"}
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
 
