@@ -7,8 +7,6 @@ Contents
 .. toctree::
    :maxdepth: 1
 
-> Getting started
-
 .. image:: https://ios-img.gamergen.com/pwned_01D4015300003952.png
 
 PoC
@@ -42,16 +40,6 @@ The redirection part
 Binding down to unsafe network
 
 --------------
-
-.. raw:: html
-
-   <!-- MarkdownTOC -->
-
--  `Getting started <#getting-started>`__
-
-.. raw:: html
-
-   <!-- /MarkdownTOC -->
 
 Getting started
 ---------------
