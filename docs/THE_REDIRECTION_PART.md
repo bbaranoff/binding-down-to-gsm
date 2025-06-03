@@ -104,14 +104,8 @@ void rrc::ue::send_connection_release()
 
    * The UE tunes to the indicated BCCH frequency (e.g., an ARFCN in the GSM 900/1800 band). It performs a normal “GSM Attach” or “Location Update” on that cell. Because our IMSI‐catcher is pretending to be a legal GSM BTS, the UE finishes its location update and thinks it is “registered” on 2G.
 
-4. **Step 4: No real service in the fake 2G network**
 
-   * Our fake 2G BTS (the IMSI‐catcher) does not have a legitimate SGSN or MSC behind it. Therefore:
-
-     1. The UE expects paging messages or a genuine Location Update Accept, but the interceptor either sends a fake “LAU Accept” then never responds to any further network requests, or simply never presents a valid GPRS path.
-     2. The UE’s internal 2G protocol timers now start running (e.g., T3212 for SMS, T3192 for Paging Response, T3210 for periodic location update). Because the intercepting cell does not offer a true GPRS/EDGE attach or voice channel, the UE will never be handed off to a real MSC or SGSN.
-
-5. **Step 5: UE gives up after ≈ 60 seconds**
+4. **Step 5: UE gives up after ≈ 60 seconds**
 
    * After roughly one minute of “stuck in 2G without any real service,” the UE automatically decides that this 2G cell is useless. Its firmware triggers a “cell reselection” back to the strongest LTE cell available (which, in our testbed, is still the legitimate operator’s LTE cell).
    * At that point, the UE re‐attaches to LTE (or resumes its previous EPS context) and resumes normal data/VoLTE usage.
