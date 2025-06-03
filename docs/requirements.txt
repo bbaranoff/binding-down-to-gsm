@@ -1,14 +1,4 @@
-# use fixed versions
-#
-# fix docutils to a version working for all
-docutils
+Sphinx==1.7.0
 
-# sphinx 5.3.0 requires Jinja2 >=3.0 and docutils >=0.14,<0.20
-sphinx
-
-# sphinx-rtd-theme >=1.0.0 would require docutils <0.18
-sphinx-rtd-theme
-
-# replaces outdated and no longer maintained m2rr
-myst-parser
-sphinx-version-warning
+# Theme
+sphinx-rtd-theme==0.2.4
