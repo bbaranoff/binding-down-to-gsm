@@ -592,7 +592,7 @@ To patch ``srsran`` for your specific needs, use the provided patch file
 
       patch -p1 < path/to/csfb.patch
 
-3. **Verify changes in ``rrc_ue.h``:**
+3. **Verify changes in** ``rrc_ue.h``:
 
    -  Ensure ``is_csfb`` is correctly set to ``true`` as per the patch:
 
