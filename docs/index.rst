@@ -43,6 +43,6 @@ Second Example
 
 
 
-.. image:: https://youtu.be/PXLblq6JDss?si=ZM48rTsJbkOR-Kle/maxresdefault.jpg
-    :alt: IMAGE ALT TEXT HERE
+.. image:: https://ios-img.gamergen.com/pwned_01D4015300003952.png
+    :alt: View it in action !
     :target: https://youtu.be/PXLblq6JDss?si=ZM48rTsJbkOR-Kle
