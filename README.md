@@ -2,4 +2,4 @@
 
 source code for 
 
-![](https://binding-down-to-unsafe-network.readthedocs.io/)
+[Binding down to unsafe network](https://binding-down-to-unsafe-network.readthedocs.io/)
