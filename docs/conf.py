@@ -116,13 +116,6 @@ html_theme = 'classic'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {"dark"}
-/* anything related to the light theme */
-html[data-theme="light"] {
-
-    /* whatever you want to change */
-    background-color: white;
-}
-
 /* anything related to the dark theme */
 html[data-theme="dark"] {
 
