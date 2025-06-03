@@ -5,7 +5,7 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    THE_REDIRECTION_PART
    KEEPING_THE_FALLBACK
