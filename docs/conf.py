@@ -47,6 +47,7 @@ extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
+    'sphinx.ext.versionwarning',
 ]
 autosectionlabel_prefix_document = True
 
