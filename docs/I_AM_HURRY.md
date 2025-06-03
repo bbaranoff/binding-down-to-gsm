@@ -162,7 +162,7 @@ To patch `srsran` for your specific needs, use the provided patch file (`csfb.pa
 ```patch
 
 --- a/srsenb/hdr/stack/rrc/rrc_ue.h	2025-06-03 00:45:21.832243675 +0200
-+++ b/srsran_4G/srsenb/hdr/stack/rrc/rrc_ue.h	2025-06-03 00:45:51.091399988 +0200
++++ b/srsenb/hdr/stack/rrc/rrc_ue.h	2025-06-03 00:45:51.091399988 +0200
 @@ -173,7 +173,7 @@
    unique_rnti_ptr<rrc_mobility> mobility_handler;
    unique_rnti_ptr<rrc_endc>     endc_handler;
