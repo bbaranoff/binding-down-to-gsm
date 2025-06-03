@@ -600,7 +600,7 @@ To patch ``srsran`` for your specific needs, use the provided patch file
 
          bool is_csfb = true;
 
-Using sib7.conf
+Using sib.conf
 ~~~~~~~~~~~~~~~
 
 Ensure your ``sib7.conf`` is correctly configured with the necessary
