@@ -87,9 +87,9 @@ What this code does ?
 ---------------------
 Context: why ``send_connection_release()`` is called
 
- 1. **Le rôle de RRC command Release**
+    1. **Le rôle de RRC command Release**
 
-   In a standard LTE eNodeB‐UE RRC procedure, the network can decide to tear down (release) an RRC connection by sending an RRC Connection Release message.
+    In a standard LTE eNodeB‐UE RRC procedure, the network can decide to tear down (release) an RRC connection by sending an RRC Connection Release message.
 
     In our “interception 2G” scenario, we first lure the UE onto a cell whose TAC is artificially set to something like “original TAC + 1” (or “original TAC – 1”). Because the UE sees a new TAC that doesn’t match its currently registered TAC, it performs a Tracking Area Update and establishes an RRC Connection on that fake cell.
 
@@ -105,9 +105,9 @@ Context: why ``send_connection_release()`` is called
       back to idle on LTE.
 
    -  Since ``is_csfb == true``, we check whether
-      ``parent->sib7.carrier_freqs_info_list.size() > 0``. In practice,
-      ``sib7.carrier_freqs_info_list[0]``    
-      ``.carrier_freqs`` is a list of
+    ``parent->sib7.carrier_freqs_info_list.size() > 0``. In practice,
+    ``sib7.carrier_freqs_info_list[0]``    
+   ``.carrier_freqs`` is a list of
       GERAN frequencies that we broadcast in the system information
       (SIB7) of our fake LTE cell. We typically populate that list with
       one or more GSM/EDGE ARFCNs (e.g., BCCH channels).
