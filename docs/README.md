@@ -1,6 +1,5 @@
-- Geting Started :
-
-You have the index above, explore and enjoy !
+> **Note**
+> You have the index above, explore and enjoy !
 
 
 PoC
