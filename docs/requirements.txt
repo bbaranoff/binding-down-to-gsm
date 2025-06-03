@@ -11,3 +11,4 @@ sphinx-rtd-theme >=1.0.0,<2
 
 # replaces outdated and no longer maintained m2rr
 myst-parser >= 0.18.1,<1
+sphinx-version-warning
