@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>I am hurry | binding-down-to-gsm</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="I am hurry" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Show how to fallback from 4G LTE or 5G NSA to 2G EDGE local network" />
+<meta property="og:description" content="Show how to fallback from 4G LTE or 5G NSA to 2G EDGE local network" />
+<link rel="canonical" href="http://localhost:4000/docs/I_AM_HURRY.html" />
+<meta property="og:url" content="http://localhost:4000/docs/I_AM_HURRY.html" />
+<meta property="og:site_name" content="binding-down-to-gsm" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="I am hurry" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Show how to fallback from 4G LTE or 5G NSA to 2G EDGE local network","headline":"I am hurry","url":"http://localhost:4000/docs/I_AM_HURRY.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=317108e2fe1d0841ab11d35e0615361844025415">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">binding-down-to-gsm</a></h1>
+      
+
+      <h1 id="i-am-hurry">I am hurry</h1>
+
+<blockquote>
+  <p>[!NOTE]
+Abstract : we will have to install open5gs-mmed (genuine), srsenb (patched), and osmocom in docker (comunity made)  to do the job</p>
+</blockquote>
+
+<p>To install <code class="language-plaintext highlighter-rouge">open5gs-mmed</code>, follow these steps:</p>
+
+<h3 id="installing-open5gs-mmed">Installing open5gs-mmed</h3>
+
+<ol>
+  <li>
+    <p><strong>Prerequisites:</strong></p>
+
+    <ul>
+      <li>Ensure your system meets the requirements for running <code class="language-plaintext highlighter-rouge">open5gs</code>.</li>
+      <li>Have <code class="language-plaintext highlighter-rouge">git</code> installed for cloning repositories and <code class="language-plaintext highlighter-rouge">cmake</code> for building.</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Clone open5gs repository:</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/open5gs/open5gs
+<span class="nb">cd </span>open5gs
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Build and install open5gs-mmed:</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>meson build
+<span class="nb">cd </span>build
+ninja
+<span class="nb">sudo </span>ninja <span class="nb">install</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Configure <code class="language-plaintext highlighter-rouge">open5gs-mmed</code> parameters:</strong></p>
+
+    <ul>
+      <li>Edit the configuration file <code class="language-plaintext highlighter-rouge">mme.conf</code> located at <code class="language-plaintext highlighter-rouge">/usr/local/etc/freeDiameter/</code> to set necessary parameters such as network configuration, security settings, and interfaces.</li>
+      <li>Example configuration (partial excerpt):</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mme</span><span class="pi">:</span>
+  <span class="na">freeDiameter</span><span class="pi">:</span> <span class="s">/usr/local/etc/freeDiameter/mme.conf</span>
+  <span class="na">s1ap</span><span class="pi">:</span>
+    <span class="na">server</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">address</span><span class="pi">:</span> <span class="s">127.0.0.2</span>
+  <span class="na">gtpc</span><span class="pi">:</span>
+    <span class="na">server</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">address</span><span class="pi">:</span> <span class="s">127.0.0.2</span>
+    <span class="na">client</span><span class="pi">:</span>
+      <span class="na">sgwc</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">address</span><span class="pi">:</span> <span class="s">127.0.0.3</span>
+      <span class="na">smf</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">address</span><span class="pi">:</span> <span class="s">127.0.0.4</span>
+  <span class="na">metrics</span><span class="pi">:</span>
+    <span class="na">server</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">address</span><span class="pi">:</span> <span class="s">127.0.0.2</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="m">9090</span>
+  <span class="na">gummei</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">plmn_id</span><span class="pi">:</span>
+        <span class="na">mcc</span><span class="pi">:</span> <span class="m">208</span>
+        <span class="na">mnc</span><span class="pi">:</span> <span class="m">15</span>
+      <span class="na">mme_gid</span><span class="pi">:</span> <span class="m">2</span>
+      <span class="na">mme_code</span><span class="pi">:</span> <span class="m">1</span>
+  <span class="na">tai</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">plmn_id</span><span class="pi">:</span>
+        <span class="na">mcc</span><span class="pi">:</span> <span class="m">208</span>
+        <span class="na">mnc</span><span class="pi">:</span> <span class="m">15</span>
+      <span class="na">tac</span><span class="pi">:</span> <span class="m">6602</span>
+  <span class="na">security</span><span class="pi">:</span>
+    <span class="na">integrity_order </span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">EIA2</span><span class="pi">,</span> <span class="nv">EIA1</span><span class="pi">,</span> <span class="nv">EIA0</span> <span class="pi">]</span>
+    <span class="na">ciphering_order </span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">EEA0</span><span class="pi">,</span> <span class="nv">EEA1</span><span class="pi">,</span> <span class="nv">EEA2</span> <span class="pi">]</span>
+  <span class="na">network_name</span><span class="pi">:</span>
+    <span class="na">full</span><span class="pi">:</span> <span class="s">Open5GS</span>
+    <span class="na">short</span><span class="pi">:</span> <span class="s">Next</span>
+  <span class="na">mme_name</span><span class="pi">:</span> <span class="s">open5gs-mme0</span>
+
+<span class="c1">################################################################################</span>
+<span class="c1"># SGaAP Server</span>
+<span class="c1">################################################################################</span>
+<span class="c1">#  o MSC/VLR</span>
+<span class="na">sgsap</span><span class="pi">:</span>
+  <span class="na">client</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">address</span><span class="pi">:</span> <span class="s">msc.open5gs.org</span> <span class="c1"># SCTP server address configured on the MSC/VLR</span>
+      <span class="na">local_address</span><span class="pi">:</span> <span class="s">172.16.80.10</span> <span class="c1"># SCTP local IP addresses to be bound in the MME</span>
+      <span class="na">map</span><span class="pi">:</span>
+        <span class="na">tai</span><span class="pi">:</span>
+          <span class="na">plmn_id</span><span class="pi">:</span>
+            <span class="na">mcc</span><span class="pi">:</span> <span class="m">208</span>
+            <span class="na">mnc</span><span class="pi">:</span> <span class="m">15</span>
+          <span class="na">tac</span><span class="pi">:</span> <span class="m">6602</span>
+        <span class="na">lai</span><span class="pi">:</span>
+          <span class="na">plmn_id</span><span class="pi">:</span>
+            <span class="na">mcc</span><span class="pi">:</span> <span class="m">001</span>
+            <span class="na">mnc</span><span class="pi">:</span> <span class="m">01</span>
+          <span class="na">lac</span><span class="pi">:</span> <span class="m">111</span>
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><strong>Start open5gs-mmed:</strong></p>
+
+    <ul>
+      <li>After configuration, start the <code class="language-plaintext highlighter-rouge">open5gs-mmed</code> service.</li>
+      <li>Ensure logging is configured as desired to <code class="language-plaintext highlighter-rouge">/var/local/log/open5gs/mme.log</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="install-osmo-nipc">Install osmo-nipc</h3>
+
+<p>For <code class="language-plaintext highlighter-rouge">osmo-nipc</code>, follow these steps:</p>
+
+<ol>
+  <li>
+    <p><strong>Clone osmo-nipc repository:</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/godfuzz3r/osmo-nidc
+<span class="nb">cd </span>osmo-nidc
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Start osmo-nipc using Docker Compose:</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>docker-compose up
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Configure osmo-nipc:</strong></p>
+
+    <ul>
+      <li>Edit <code class="language-plaintext highlighter-rouge">osmo-nipc</code> configuration as needed, typically found in <code class="language-plaintext highlighter-rouge">configs/configs.yaml</code>.</li>
+      <li>
+        <p>Example configuration (partial excerpt):</p>
+
+        <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">network</span><span class="pi">:</span>
+  <span class="na">mcc</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+  <span class="na">mnc</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1"</span>
+  <span class="na">short-name</span><span class="pi">:</span> <span class="s">Test</span>
+  <span class="na">long-name</span><span class="pi">:</span> <span class="s">Test</span>
+  <span class="na">encryption</span><span class="pi">:</span> <span class="s">a5 </span><span class="m">0</span>
+  <span class="na">use-asterisk</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="na">radio</span><span class="pi">:</span>
+  <span class="na">band</span><span class="pi">:</span> <span class="s">DCS1800</span>
+  <span class="na">arfcn</span><span class="pi">:</span> <span class="m">871</span>
+  <span class="na">nominal-power</span><span class="pi">:</span> <span class="m">20</span>
+  <span class="na">max-power-red</span><span class="pi">:</span> <span class="m">20</span>
+  <span class="na">device-type</span><span class="pi">:</span> <span class="s">uhd</span>
+  <span class="na">tx-path</span><span class="pi">:</span> <span class="s">TX/RX</span>
+  <span class="na">rx-path</span><span class="pi">:</span> <span class="s">TX/RX</span>
+  <span class="na">clock-ref</span><span class="pi">:</span> <span class="s">internal</span>
+
+<span class="na">egprs</span><span class="pi">:</span>
+  <span class="na">routing-enabled</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">apn-name</span><span class="pi">:</span> <span class="s">free</span>
+  <span class="na">type-support</span><span class="pi">:</span> <span class="s">v4</span>
+  <span class="na">ip-prefix</span><span class="pi">:</span> <span class="s">172.16.137.0/24</span>
+  <span class="na">ip-ifconfig</span><span class="pi">:</span> <span class="s">172.16.137.1/24</span>
+  <span class="na">dns0</span><span class="pi">:</span> <span class="s">172.16.137.1</span>
+  <span class="na">dns1</span><span class="pi">:</span> <span class="s">172.16.137.1</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Start the osmo-nipc service:</strong></p>
+
+    <ul>
+      <li>Ensure the configurations are correct and start the service accordingly.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="patching-srsran">Patching srsran</h3>
+
+<p>To patch <code class="language-plaintext highlighter-rouge">srsran</code> for your specific needs, use the provided patch file (<code class="language-plaintext highlighter-rouge">csfb.patch</code>). Apply the patch as follows:</p>
+
+<ol>
+  <li><strong>Create the patch</strong>*</li>
+</ol>
+
+<div class="language-patch highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+--- a/srsenb/hdr/stack/rrc/rrc_ue.h	2025-06-03 00:45:21.832243675 +0200
+<span class="gi">+++ b/srsenb/hdr/stack/rrc/rrc_ue.h	2025-06-03 00:45:51.091399988 +0200
+</span><span class="p">@@ -173,7 +173,7 @@</span>
+   unique_rnti_ptr&lt;rrc_mobility&gt; mobility_handler;
+   unique_rnti_ptr&lt;rrc_endc&gt;     endc_handler;
+ 
+<span class="gd">-  bool is_csfb = false;
+</span><span class="gi">+  bool is_csfb = true;
+</span> 
+ private:
+   srsran::unique_timer activity_timer; // for basic DL/UL activity timeout
+
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p><strong>Apply the patch</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>patch <span class="nt">-p1</span> &lt; path/to/csfb.patch
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Verify changes in <code class="language-plaintext highlighter-rouge">rrc_ue.h</code>:</strong></p>
+
+    <ul>
+      <li>
+        <p>Ensure <code class="language-plaintext highlighter-rouge">is_csfb</code> is correctly set to <code class="language-plaintext highlighter-rouge">true</code> as per the patch:</p>
+
+        <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">is_csfb</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="using-sib7conf">Using sib7.conf</h3>
+
+<p>Ensure your <code class="language-plaintext highlighter-rouge">sib7.conf</code> is correctly configured with the necessary parameters for broadcasting SIB7 information on ARFCN 871 for DCS1800 band, as per your network setup.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sib1 =
+{
+    mcc = 1;
+    mnc = 1;
+    intra_freq_reselection = "Allowed";
+    q_rx_lev_min = -65;
+    //p_max = 3;
+    cell_barred = "notBarred"
+    si_window_length = 20;
+    sched_info =
+    (
+        {
+            si_periodicity = 16;
+
+            // comma-separated array of SIB-indexes (from 3 to 13), leave empty or commented to just scheduler sib2
+            si_mapping_info = [ 3, 7 ];
+        }
+    );
+    system_info_value_tag = 0;
+};
+
+
+
+
+..................SAME AS ORIGINAL..................
+
+
+
+sib7 =
+{
+    t_resel_geran = 7;
+    carrier_freqs_info_list =
+    (
+        {
+            cell_resel_prio = 7;
+            ncc_permitted = 255;
+            q_rx_lev_min = 0;
+            thresh_x_high = 2;
+            thresh_x_low = 2;
+
+            start_arfcn = 871;
+            band_ind = "dcs1800";
+            explicit_list_of_arfcns = (
+               871
+            );
+        }
+    );
+};
+</code></pre></div></div>
+
+<hr />
+
+<p>By following these steps, you can effectively set up and configure <code class="language-plaintext highlighter-rouge">open5gs-mmed</code>, <code class="language-plaintext highlighter-rouge">osmo-nipc</code>, and patch <code class="language-plaintext highlighter-rouge">srsran</code> to align with your specific network requirements and testing scenarios. Adjust configurations as needed for your particular deployment environment and operational goals.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
