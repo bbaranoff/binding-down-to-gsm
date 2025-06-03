@@ -42,7 +42,3 @@ Second Example
 
 
 
-
-.. image:: https://ios-img.gamergen.com/pwned_01D4015300003952.png
-    :alt: View it in action !
-    :target: https://youtu.be/PXLblq6JDss?si=ZM48rTsJbkOR-Kle
