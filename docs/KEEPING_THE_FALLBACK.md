@@ -81,7 +81,8 @@ Once the UE has marked PLMN 001–01 as forbidden, you might think it would simp
 * Because your fake 2G BCCH only lists itself (ARFCN 871, PLMN 001–01) and no LTE neighbor, the UE’s reselection algorithm never “sees” any E-UTRAN cell it could go to. Even if a real LTE cell from its operator is physically close by, the UE doesn’t know about it—because no neighbor‐list IE pointed to it.
 * Therefore, from the UE’s point of view:
 
-  > “I’m camped on ARFCN 871 (2G), PLMN 001–01 (which I just marked forbidden), but I have no other candidate cell broadcasts in my BCCH. I must stay here until I find an alternative cell.”
+> [!TIP]
+> “I’m camped on ARFCN 871 (2G), PLMN 001–01 (which I just marked forbidden), but I have no other candidate cell broadcasts in my BCCH. I must stay here until I find an alternative cell.”
   > It will not hop back to LTE “by itself” unless it actually sees a higher‐priority (allowed) cell in the same BCCH’s neighbor‐list or it runs out of reacquisition timers entirely.
 
 ### 4.2. Forbidden PLMN → barred for some time, but not immediate reselect
@@ -112,5 +113,5 @@ According to 3GPP TS 23.122 (for GSM/UTRAN cell selection) and TS 36.304 (for E-
   2. No other cell (including any real LTE) was advertised in that 2G BCCH’s neighbor lists.
   3. The UE’s cell‐reselection logic must find a strictly “better” allowed cell before vacating ARFCN 871—hence it stays there until such a cell appears.
 
-> **Danger**
+> [!WARNING]
 > Thus, you see the UE stay on 2G 001–01 for several seconds (or even minutes, until it finds a different allowed PLMN / RAT). It does **not** “refall back to 4G” immediately, because from the UE’s perspective there simply isn’t any other *advertised* cell to go to—only that one forbidden‐PLMN 2G cell, which it can’t deregister from until it finds an alternative.
