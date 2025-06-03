@@ -101,7 +101,8 @@ Context: why ``send_connection_release()`` is called
 
    -  Since ``is_csfb == true``, we check whether
       ``parent->sib7.carrier_freqs_info_list.size() > 0``. In practice,
-      ``sib7.carrier_freqs_info_list[0].carrier_freqs`` is a list of
+      ``sib7.carrier_freqs_info_list[0]``    
+      ``.carrier_freqs`` is a list of
       GERAN frequencies that we broadcast in the system information
       (SIB7) of our fake LTE cell. We typically populate that list with
       one or more GSM/EDGE ARFCNs (e.g., BCCH channels).
