@@ -1,6 +1,6 @@
 # I am hurry 
 
-## Resume  we will have to install open5gs-mmed (genuine), srsenb (patched), and osmocom (cmomunity made) in docker to do the job
+## Resume  we will have to install open5gs-mmed (genuine), srsenb (patched), and osmocom (comunity made) in docker to do the job
 
 To install `open5gs-mmed`, follow these steps:
 
