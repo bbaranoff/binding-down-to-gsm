@@ -7,9 +7,9 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   THE_REDIRECTION_PART
-   KEEPING_THE_FALLBACK
-   I_AM_HURRY
+   THE_REDIRECTION_PART.md
+   KEEPING_THE_FALLBACK.md
+   I_AM_HURRY.md
 
 > Getting started
 
