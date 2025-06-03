@@ -80,8 +80,19 @@ it looks like this:
 
 What this code does ?
 ---------------------
+Context: why ``send_connection_release()`` is called
 
-**The crucial ``if (is_csfb)`` block**
+ 1.**Le rôle de RRC command Release**
+
+   In a standard LTE eNodeB‐UE RRC procedure, the network can decide to tear down (release) an RRC connection by sending an RRC Connection Release message.
+
+    In our “interception 2G” scenario, we first lure the UE onto a cell whose TAC is artificially set to something like “original TAC + 1” (or “original TAC – 1”). Because the UE sees a new TAC that doesn’t match its currently registered TAC, it performs a Tracking Area Update and establishes an RRC Connection on that fake cell.
+
+    As soon as the UE is RRC‐connected to that fake cell (with TAC ±1), the eNodeB calls send_connection_release(). In other words, the UE is now camped on our fake LTE cell, and we want to immediately force it off LTE and onto GERAN.
+
+
+
+2. **The crucial ``if (is_csfb)`` block**
 
    -  The member variable ``is_csfb`` was set to ``true`` earlier (in
       ``rrc_ue.h``). Because of that, this ``if`` always succeeds. If it
