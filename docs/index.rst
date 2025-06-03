@@ -193,11 +193,6 @@ Summary
    immediately tears down LTE and camps onto the specified GSM/EDGE
    frequency.
 
--  Because our fake 2G cell does not provide a genuine SGSN/MSC, the
-   UE’s 2G‐layer timers expire after about one minute, and the phone
-   gives up on the fake 2G cell and re‐selects back to the real LTE
-   network.
-
 -  In short, the combination of:
 
    1. broadcasting TAC ± 1 to trick the UE into RRC‐connecting to our
@@ -309,35 +304,9 @@ continually looks for the “best” cell according to these priorities (per
 
 --------------
 
-3. What happens when the UE sees “PLMN not allowed” in 2G
----------------------------------------------------------
-
-1. **Location Update procedure**
-
-   -  As soon as the UE camps on ARFCN 871 under PLMN 001–01, it
-      initiates a **GSM Location Update** (LAU) to the IMSI-catcher (or
-      “fake MSC”).
-   -  The fake MSC (or SGSN if packet‐switched) can respond with **LAU
-      Reject, cause = “PLMN not allowed.”** This is the standard GSM
-      cause code for “the UE is not allowed to register on this PLMN.”
-
-2. **UE’s reaction to “LAU Reject: PLMN not allowed”**
-
-   -  Upon receiving that reject, the UE does the following (per TS
-      04.08 / TS 22.010):
-
-      -  It knows its SIM/USIM does **not** allow registration on
-         001–01, so it adds **001–01** to its **Forbidden PLMN (FPLMN)
-         list**—meaning: “don’t try this PLMN again until after a timer
-         (T3245) expires.”
-      -  However, it stays physically camped on that BCCH frequency
-         (ARFCN 871) until it finds another acceptable cell, because to
-         leave a 2G RACH/BCCH behind, it must find an alternate “better”
-         cell first.
-
 --------------
 
-4. Why the UE does *not* immediately fall back to 4G
+3. Why the UE does *not* immediately fall back to 4G
 ----------------------------------------------------
 
 Once the UE has marked PLMN 001–01 as forbidden, you might think it
@@ -345,7 +314,7 @@ would simply go look for LTE again—after all, its SIM says “I’m not
 allowed on 001–01, so I’ll reselect back to LTE.” But in practice, it
 usually does **not** instantaneously re‐camp to LTE, for two reasons:
 
-4.1. No LTE neighbor info (or LTE cell absent)
+3.1. No LTE neighbor info (or LTE cell absent)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  When you broadcast that fake 2G cell on ARFCN 871, you typically only
@@ -378,7 +347,7 @@ usually does **not** instantaneously re‐camp to LTE, for two reasons:
    higher‐priority (allowed) cell in the same BCCH’s neighbor‐list or it
    runs out of reacquisition timers entirely.
 
-4.2. Forbidden PLMN → barred for some time, but not immediate reselect
+3.2. Forbidden PLMN → barred for some time, but not immediate reselect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  After “PLMN not allowed,” the UE writes 001–01 into its **Local
@@ -423,7 +392,7 @@ practice:
 
 --------------
 
-5. Putting it all together
+4. Putting it all together
 --------------------------
 
 -  **First redirection (PLMN AAA–BBB)** → UE obeys RRC Release, camps on
