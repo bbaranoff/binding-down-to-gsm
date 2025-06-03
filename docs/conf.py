@@ -103,6 +103,10 @@ todo_include_todos = False
 
 
 # -- Options for HTML output ----------------------------------------------
+html_context = {
+   # ...
+   "default_mode": "dark"
+}
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
@@ -111,10 +115,19 @@ html_theme = 'classic'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
-html_context = {
-   # ...
-   "default_mode": "dark"
+html_theme_options = {"dark"}
+/* anything related to the light theme */
+html[data-theme="light"] {
+
+    /* whatever you want to change */
+    background-color: white;
+}
+
+/* anything related to the dark theme */
+html[data-theme="dark"] {
+
+    /* whatever you want to change */
+    background-color: black;
 }
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
