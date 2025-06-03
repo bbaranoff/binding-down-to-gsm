@@ -254,15 +254,8 @@ When a UE is in Idle mode (RRC IDLE on LTE or Idle on 2G), it
 continually looks for the “best” cell according to these priorities (per
 3GPP TS 23.122 and TS 36.304):
 
-1. **Highest‐priority PLMN**:
 
-   -  The UE has a list of PLMNs in its USIM—starting with the Home PLMN
-      (HPLMN), then any Equivalent PLMNs (EF-PLMN), then the list of
-      “Allowed” PLMNs (if it’s roaming).
-   -  It will prefer to camp on a carrier whose broadcast PLMN matches
-      one of those, in priority order.
-
-2. **Cell‐ranking inside a given PLMN**:
+1. **Cell‐ranking inside a given PLMN**:
 
    -  If multiple cells broadcast the same PLMN, the UE uses “cell
       reselection” criteria (signal‐strength thresholds and ranking
@@ -271,7 +264,7 @@ continually looks for the “best” cell according to these priorities (per
       the UE will normally treat that cell as “barred” and not camp on
       it—unless it was forced by RRC redirection.
 
-2.2. Forced RRC redirection overrides normal camp rules
+2. Forced RRC redirection overrides normal camp rules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  When an LTE eNodeB sends **“RRC Connection Release with
