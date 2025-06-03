@@ -32,61 +32,65 @@ To install `open5gs-mmed`, follow these steps:
    * Edit the configuration file `mme.conf` located at `/usr/local/etc/freeDiameter/` to set necessary parameters such as network configuration, security settings, and interfaces.
    * Example configuration (partial excerpt):
 
-     ```yaml
-     mme:
-       freeDiameter: /usr/local/etc/freeDiameter/mme.conf
-       s1ap:
-         server:
-           - address: 127.0.0.2
-       gtpc:
-         server:
-           - address: 127.0.0.2
-         client:
-           sgwc:
-             - address: 127.0.0.3
-           smf:
-             - address: 127.0.0.4
-       metrics:
-         server:
-           - address: 127.0.0.2
-             port: 9090
-       gummei:
-         - plmn_id:
-             mcc: 208
-             mnc: 15
-           mme_gid: 2
-           mme_code: 1
-       tai:
-         - plmn_id:
-             mcc: 208
-             mnc: 15
-           tac: 6602
-       security:
-         integrity_order : [ EIA2, EIA1, EIA0 ]
-         ciphering_order : [ EEA0, EEA1, EEA2 ]
-       network_name:
-         full: Open5GS
-         short: Next
-       mme_name: open5gs-mme0
-    sgsap:
-      client:
-        - address: msc.open5gs.org # SCTP server address configured on the MSC/VLR
-        local_address: 172.16.80.10 # SCTP local IP addresses to be bound in the MME
-          map:
-            tai:
-              plmn_id:
-                mcc: 208
-                mnc: 15
-              tac: 6602
-            lai:
-              plmn_id:
-                mcc: 001
-                mnc: 01
-              lac: 111
 
 
+```yaml
+mme:
+  freeDiameter: /usr/local/etc/freeDiameter/mme.conf
+  s1ap:
+    server:
+      - address: 127.0.0.2
+  gtpc:
+    server:
+      - address: 127.0.0.2
+    client:
+      sgwc:
+        - address: 127.0.0.3
+      smf:
+        - address: 127.0.0.4
+  metrics:
+    server:
+      - address: 127.0.0.2
+        port: 9090
+  gummei:
+    - plmn_id:
+        mcc: 208
+        mnc: 15
+      mme_gid: 2
+      mme_code: 1
+  tai:
+    - plmn_id:
+        mcc: 208
+        mnc: 15
+      tac: 6602
+  security:
+    integrity_order : [ EIA2, EIA1, EIA0 ]
+    ciphering_order : [ EEA0, EEA1, EEA2 ]
+  network_name:
+    full: Open5GS
+    short: Next
+  mme_name: open5gs-mme0
 
-     ```
+################################################################################
+# SGaAP Server
+################################################################################
+#  o MSC/VLR
+sgsap:
+  client:
+    - address: msc.open5gs.org # SCTP server address configured on the MSC/VLR
+      local_address: 172.16.80.10 # SCTP local IP addresses to be bound in the MME
+      map:
+        tai:
+          plmn_id:
+            mcc: 208
+            mnc: 15
+          tac: 6602
+        lai:
+          plmn_id:
+            mcc: 001
+            mnc: 01
+          lac: 111
+```
 
 5. **Start open5gs-mmed:**
 
@@ -112,7 +116,7 @@ For `osmo-nipc`, follow these steps:
 
 3. **Configure osmo-nipc:**
 
-   * Edit `osmo-nipc` configuration as needed, typically found in `docker-compose.yml`.
+   * Edit `osmo-nipc` configuration as needed, typically found in `configs/configs.yaml`.
    * Example configuration (partial excerpt):
 
      ```yaml
@@ -167,13 +171,14 @@ To patch `srsran` for your specific needs, use the provided patch file (`csfb.pa
  
  private:
    srsran::unique_timer activity_timer; // for basic DL/UL activity timeout
+
 ```
 
 2. **Apply the patch**
 
    ```bash
    patch -p1 < path/to/csfb.patch
-   ```   ```
+   ```
 
 3. **Verify changes in `rrc_ue.h`:**
 
