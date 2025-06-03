@@ -11,9 +11,7 @@ Contents
    KEEPING_THE_FALLBACK
    I_AM_HURRY
 
-
-
--  Geting Started :
+> Getting started
 
 You have the index above, explore and enjoy !
 
