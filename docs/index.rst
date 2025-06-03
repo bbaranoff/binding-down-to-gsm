@@ -234,8 +234,9 @@ immediately falls back to 4G.
    -  The UE, still camped on 2G AAA–BBB or coming from LTE, gets
       redirected again via LTE RRC Release → it tears down LTE and camps
       on 2G ARFCN 871 under MCC/MNC 001–01.
-   -  Now the UE performs a normal 2G Location Update, but the fake 2G
-      BTS (IMSI‐catcher) replies “LAU Reject: PLMN not allowed.”
+   -  Now the UE performs a normal 2G Location Update, and the fake 2G
+      BTS (IMSI‐catcher) replies “LAU accept” cause it is set with accept all
+      authentication
 
 At this point, the UE is sitting on a 2G cell broadcasting PLMN
 001–01—which is not in its allowed PLMN list—yet it does **not**
