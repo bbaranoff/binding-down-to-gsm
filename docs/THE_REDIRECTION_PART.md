@@ -116,6 +116,6 @@ void rrc::ue::send_connection_release()
 
 This is why, in an interception scenario, the UE ends up on the fake 2G network for about one minute: it’s following the standard CSFB procedure (driven by `is_csfb = true` in `send_connection_release()`), but the interceptor never completes a valid 2G attach/Authentication/MSC handover. 
 
-> **Warning**
+> [!WARNING]
 > After its internal 2G timers time out (≈ 60 s), the UE reverts to LTE.
 
