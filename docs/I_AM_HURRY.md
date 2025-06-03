@@ -1,4 +1,4 @@
-# I AM HURRY
+# I am hurry 
 
 ## Resume  we will have to install open5gs-mmd srsenb and osmocom in docker to do the job
 
