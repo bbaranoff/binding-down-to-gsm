@@ -13,6 +13,6 @@ Contents
 
 
 
-# Getinng Started !
+- Getinng Started !
 
 You have the index above, explore and enjoy !
