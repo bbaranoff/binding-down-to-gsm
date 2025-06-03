@@ -61,24 +61,6 @@ void rrc::ue::send_connection_release()
 
    * Since `is_csfb == true`, we check whether `parent->sib7.carrier_freqs_info_list.size() > 0`. In practice, `sib7.carrier_freqs_info_list[0].carrier_freqs` is a list of GERAN frequencies that we broadcast in the system information (SIB7) of our fake LTE cell. We typically populate that list with one or more GSM/EDGE ARFCNs (e.g., BCCH channels).
 
-   * If the list is non‐empty, we set:
-
-     ```cpp
-     rel_ies.redirected_carrier_info_present = true;
-     rel_ies.redirected_carrier_info.set_geran();
-     rel_ies.redirected_carrier_info.geran() = parent->sib7.carrier_freqs_info_list[0].carrier_freqs;
-     ```
-
-     In other words, we instruct the UE:
-
-     > “Here is your RRC Connection Release, but notice that I’m including `redirected_carrier_info` of type GERAN. Go camp on these GSM/EDGE frequencies instead.”
-
-   * If for some reason `sib7.carrier_freqs_info_list` were empty, we would send `redirected_carrier_info_present = false`, meaning “no redirection; just drop to LTE idle.” But in our interception setup, we always ensure that `SIB7` advertises the neighbor GERAN BCCH frequencies.
-
-4. **Sending the message**
-
-   * Finally, `send_dl_dcch(&dl_dcch_msg, nullptr, &octet_str)` actually transmits the RRC Connection Release (with the redirection IE) over the air to the UE. At that instant, the UE’s LTE stack sees “RRC Connection Release with redirect to GERAN” and immediately switches to the indicated 2G/EDGE frequency.
-
 ---
 
 ## Why this makes the UE fall back to 2G for about one minute
@@ -105,7 +87,7 @@ void rrc::ue::send_connection_release()
    * The UE tunes to the indicated BCCH frequency (e.g., an ARFCN in the GSM 900/1800 band). It performs a normal “GSM Attach” or “Location Update” on that cell. Because our IMSI‐catcher is pretending to be a legal GSM BTS, the UE finishes its location update and thinks it is “registered” on 2G.
 
 
-4. **Step 5: UE gives up after ≈ 60 seconds**
+4. **Step 4: UE gives up after ≈ 60 seconds**
 
    * After roughly one minute of “stuck in 2G without any real service,” the UE automatically decides that this 2G cell is useless. Its firmware triggers a “cell reselection” back to the strongest LTE cell available (which, in our testbed, is still the legitimate operator’s LTE cell).
    * At that point, the UE re‐attaches to LTE (or resumes its previous EPS context) and resumes normal data/VoLTE usage.
