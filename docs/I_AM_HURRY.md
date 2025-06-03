@@ -68,6 +68,24 @@ To install `open5gs-mmed`, follow these steps:
          full: Open5GS
          short: Next
        mme_name: open5gs-mme0
+    sgsap:
+      client:
+        - address: msc.open5gs.org # SCTP server address configured on the MSC/VLR
+        local_address: 172.16.80.10 # SCTP local IP addresses to be bound in the MME
+          map:
+            tai:
+              plmn_id:
+                mcc: 208
+                mnc: 15
+              tac: 6602
+            lai:
+              plmn_id:
+                mcc: 001
+                mnc: 01
+              lac: 111
+
+
+
      ```
 
 5. **Start open5gs-mmed:**
