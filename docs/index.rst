@@ -38,8 +38,8 @@ Second Example
 
 
 
-redirection
-===========
+The redirection part
+====================
 
 Binding down to unsafe network
 
@@ -227,7 +227,7 @@ network for about one minute: it’s following the standard CSFB procedure
 interceptor never completes a valid 2G attach/Authentication/MSC
 handover.
 
-.. code:: danger
+.. danger::
 
    After its internal 2G timers time out (≈ 60 s), the UE reverts to LTE.
 Keep
@@ -456,14 +456,12 @@ practice:
       allowed cell before vacating ARFCN 871—hence it stays there until
       such a cell appears.
 
-.. code:: tip
+.. tip:: Thus, you see the UE stay on 2G 001–01 for several seconds (or even minutes, until it finds a different allowed PLMN / RAT). It does **not** “refall back to 4G” immediately, because from the UE’s perspective there simply isn’t any other *advertised* cell to go to—only that one forbidden‐PLMN 2G cell, which it can’t deregister from until it finds an alternative.
 
-   Thus, you see the UE stay on 2G 001–01 for several seconds (or even minutes, until it finds a different allowed PLMN / RAT). It does **not** “refall back to 4G” immediately, because from the UE’s perspective there simply isn’t any other *advertised* cell to go to—only that one forbidden‐PLMN 2G cell, which it can’t deregister from until it finds an alternative.
-hurry
-=====
+I am hurry
+==========
 
-   [!NOTE] Abstract : we will have to install open5gs-mmed (genuine),
-   srsenb (patched), and osmocom in docker (comunity made) to do the job
+.. note:: Abstract : we will have to install open5gs-mmed (genuine), srsenb (patched), and osmocom in docker (comunity made) to do the job
 
 To install ``open5gs-mmed``, follow these steps:
 
