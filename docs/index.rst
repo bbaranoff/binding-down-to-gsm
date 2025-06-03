@@ -44,7 +44,7 @@ Binding down to unsafe network
 Getting started
 ---------------
 
-Below is an English‐language explanation of how the UE is forced to fall
+This is an explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
 Tracking Area Code (TAC) that is one higher or one lower than the “real”
 TAC, and because the ``is_csfb`` flag is set to true inside the
