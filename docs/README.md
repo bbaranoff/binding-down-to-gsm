@@ -1,5 +1,6 @@
-> **Note**
-> You have the index above, explore and enjoy !
+```note
+You have the index above, explore and enjoy !
+```
 
 
 PoC
