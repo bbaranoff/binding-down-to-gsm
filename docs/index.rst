@@ -13,6 +13,6 @@ Contents
 
 
 
-- Getinng Started !
+- Geting Started :
 
 You have the index above, explore and enjoy !
