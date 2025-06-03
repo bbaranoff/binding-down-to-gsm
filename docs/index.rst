@@ -49,7 +49,7 @@ back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
 Tracking Area Code (TAC) that is one higher or one lower than the “real”
 TAC, and because the ``is_csfb`` flag is set to true inside the
 ``send_connection_release()`` function. The snippet in question lives in
-**``rrc_ue.cc``** under **``void rrc::ue::send_connection_release()``**;
+** ``rrc_ue.cc`` ** under **``void rrc::ue::send_connection_release()``**;
 it looks like this:
 
 .. code:: cpp
