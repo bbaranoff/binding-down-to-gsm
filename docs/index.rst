@@ -91,8 +91,7 @@ Context: why ``send_connection_release()`` is called
     As soon as the UE is RRC‐connected to that fake cell (with TAC ±1), the eNodeB calls send_connection_release(). In other words, the UE is now camped on our fake LTE cell, and we want to immediately force it off LTE and onto GERAN.
 
 
-
-2. **The crucial ``if (is_csfb)`` block**
+2. **The crucial ```if (is_csfb)``` block**
 
    -  The member variable ``is_csfb`` was set to ``true`` earlier (in
       ``rrc_ue.h``). Because of that, this ``if`` always succeeds. If it
