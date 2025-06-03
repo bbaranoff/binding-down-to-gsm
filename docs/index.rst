@@ -16,7 +16,7 @@ First example
 
 .. raw:: html
 
-   <iframe width="480" height="340" src="https://www.youtube.com/embed/PXLblq6JDss?si=ehTA8gRo9vsEjRqm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+   <iframe width="240" height="120" src="https://www.youtube.com/embed/PXLblq6JDss?si=ehTA8gRo9vsEjRqm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
 .. raw:: html
 
@@ -26,7 +26,7 @@ Second Example
 
 .. raw:: html
 
-   <iframe width="480" height="340" src="https://www.youtube.com/embed/Zn2KkymDGe0?si=Y6cqUFY9XJ6nhCR5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+   <iframe width="240" height="120" src="https://www.youtube.com/embed/Zn2KkymDGe0?si=Y6cqUFY9XJ6nhCR5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
 .. raw:: html
 
@@ -82,7 +82,7 @@ What this code does ?
 ---------------------
 Context: why ``send_connection_release()`` is called
 
- 1.**Le rôle de RRC command Release**
+ 1. **Le rôle de RRC command Release**
 
    In a standard LTE eNodeB‐UE RRC procedure, the network can decide to tear down (release) an RRC connection by sending an RRC Connection Release message.
 
@@ -91,7 +91,7 @@ Context: why ``send_connection_release()`` is called
     As soon as the UE is RRC‐connected to that fake cell (with TAC ±1), the eNodeB calls send_connection_release(). In other words, the UE is now camped on our fake LTE cell, and we want to immediately force it off LTE and onto GERAN.
 
 
-2. **The crucial ```if (is_csfb)``` block**
+2. **The crucial 'if (is_csfb)' block**
 
    -  The member variable ``is_csfb`` was set to ``true`` earlier (in
       ``rrc_ue.h``). Because of that, this ``if`` always succeeds. If it
