@@ -228,8 +228,9 @@ handover.
 .. danger::
 
    After its internal 2G timers time out (≈ 60 s), the UE reverts to LTE.
-Keep
-====
+
+Keep the 2G channel
+===================
 
 Below is a step‐by‐step explanation of what happens when you redirect a
 phone twice to the same ARFCN, first advertising a “real” operator
