@@ -112,4 +112,5 @@ According to 3GPP TS 23.122 (for GSM/UTRAN cell selection) and TS 36.304 (for E-
   2. No other cell (including any real LTE) was advertised in that 2G BCCH’s neighbor lists.
   3. The UE’s cell‐reselection logic must find a strictly “better” allowed cell before vacating ARFCN 871—hence it stays there until such a cell appears.
 
-Thus, you see the UE stay on 2G 001–01 for several seconds (or even minutes, until it finds a different allowed PLMN / RAT). It does **not** “refall back to 4G” immediately, because from the UE’s perspective there simply isn’t any other *advertised* cell to go to—only that one forbidden‐PLMN 2G cell, which it can’t deregister from until it finds an alternative.
+> **Danger**
+> Thus, you see the UE stay on 2G 001–01 for several seconds (or even minutes, until it finds a different allowed PLMN / RAT). It does **not** “refall back to 4G” immediately, because from the UE’s perspective there simply isn’t any other *advertised* cell to go to—only that one forbidden‐PLMN 2G cell, which it can’t deregister from until it finds an alternative.
