@@ -665,3 +665,7 @@ By following these steps, you can effectively set up and configure
 specific network requirements and testing scenarios. Adjust
 configurations as needed for your particular deployment environment and
 operational goals.
+
+At this point of the project you will stay some few long minutes 
+exposing your smartphone frames a good idea to go further is to increase timer
+T3245
