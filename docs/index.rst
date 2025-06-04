@@ -3,6 +3,11 @@ Binding down to unsafe network
 
 Contents
 --------
+.. mermaid ::
+
+    graph TD
+    A --> B
+    B -- Label --> C
 
 .. toctree::
    :maxdepth: 1
