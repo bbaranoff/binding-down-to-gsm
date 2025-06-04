@@ -37,6 +37,7 @@ Getting started
 
     .. mermaid::
 
+   
    sequenceDiagram
       participant Target_MS_UE
       participant eNodeB
@@ -50,7 +51,8 @@ Getting started
       Target_MS_UE->IMSI_Catcher: You are on test net
       Target_MS_UE-->eNodeB: hey is there test net here ?
       eNodeB-->Target_MS_UE: You are searching test no test...
-      target_MS_UE->IMSI_Catcher: Can I stay ?
+      Target_MS_UE->IMSI_Catcher: Can I stay ?
+  
 
 This is an explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
