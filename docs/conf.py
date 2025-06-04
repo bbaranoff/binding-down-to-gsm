@@ -30,6 +30,10 @@ import shlex
 # ones.
 extensions = ['sphinx.ext.doctest']
 extensions = ["sphinxcontrib.mermaid"]
+extensions = ["sphinx_rtd_dark_mode"]
+default_dark_mode = False
+html_theme = 'sphinx_rtd_theme'
+html_context = {"default_mode": "dark"}
 default_dark_mode = True
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -106,8 +110,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinx_rtd_theme'
-html_context = {"default_mode": "dark"}
+
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
