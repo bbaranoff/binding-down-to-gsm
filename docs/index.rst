@@ -283,11 +283,6 @@ usually does **not** instantaneously re‐camp to LTE, for two reasons:
 
 No LTE neighbor info (or LTE cell absent)
 
--  When you broadcast that fake 2G cell on ARFCN 871, you typically only
-   advertise **GERAN frequencies** (and your fake PLMN 001–01). You do
-   **not** broadcast any E-UTRAN neighbor information (no SIB7 for LTE,
-   no SIB19, etc.) on that BCCH.
-
 -  A UE in idle on 2G waits for periodic “cell reselection” checks
    (every few hundred ms). It will consider these in order:
 
