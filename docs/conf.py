@@ -37,7 +37,7 @@ default_dark_mode = True
 templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
-source_suffix = ['.md']
+source_suffix = ['.rst']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
