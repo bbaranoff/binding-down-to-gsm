@@ -39,6 +39,7 @@ python:
     - requirements: docs/requirements.txt
     - method: pip
       path: .
+
 extra_javascript:
   - optionalConfig.js
   - https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.min.js
