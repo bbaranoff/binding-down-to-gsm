@@ -81,7 +81,7 @@ What this code does ?
 ---------------------
 Context: why ``send_connection_release()`` is called
 
-    1. **Le rôle de RRC command Release**
+1. **RRC command Release role**
 
     In a standard LTE eNodeB‐UE RRC procedure, the network can decide to tear down (release) an RRC connection by sending an RRC Connection Release message.
 
