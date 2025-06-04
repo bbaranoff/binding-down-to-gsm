@@ -39,7 +39,6 @@ The redirection part
 
 Binding down to unsafe network
 
---------------
 
 Getting started
 ---------------
@@ -77,7 +76,6 @@ it looks like this:
      send_dl_dcch(&dl_dcch_msg, nullptr, &octet_str);
    }
 
---------------
 
 What this code does ?
 ---------------------
@@ -108,7 +106,6 @@ Context: why ``send_connection_release()`` is called
       (SIB7) of our fake LTE cell. We typically populate that list with
       one or more GSM/EDGE ARFCNs (e.g., BCCH channels).
 
---------------
 
 Why this makes the UE fall back to 2G for about one minute
 ----------------------------------------------------------
@@ -157,7 +154,6 @@ Why this makes the UE fall back to 2G for about one minute
    -  At that point, the UE re‐attaches to LTE (or resumes its previous
       EPS context) and resumes normal data/VoLTE usage.
 
---------------
 
 Summary
 -------
@@ -208,8 +204,6 @@ MCC/MNC (so the UE attaches normally), then advertising MCC = 001, MNC =
 01 (PLMN 001–01). In particular, we’ll see why the UE stays camped on 2G
 001–01 (even though that PLMN is “not allowed” by its SIM) and never
 immediately falls back to 4G.
-
---------------
 
 1. Scenario summary
 -------------------
@@ -281,10 +275,6 @@ continually looks for the “best” cell according to these priorities (per
       camps—even though that PLMN is “forbidden” by its SIM. Because RRC
       redirection has **higher priority**, the UE must at least attempt
       to attach.
-
---------------
-
---------------
 
 3. Why the UE does *not* immediately fall back to 4G
 ----------------------------------------------------
