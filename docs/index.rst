@@ -45,6 +45,13 @@ Getting started
     Phone i 4G  --> Fallback 2G
     Fallback 2G -- MitM --> Internet
 
+.. mermaid::
+
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
+
 This is an explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
 Tracking Area Code (TAC) that is one higher or one lower than the “real”
