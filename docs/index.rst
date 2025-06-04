@@ -277,8 +277,6 @@ RRC redirection first. In other words:
 3. Why the UE does *not* immediately fall back to 4G
 ----------------------------------------------------
 
-Now LTE neighbor info
-
 -  A UE in idle on 2G waits for periodic “cell reselection” checks
    (every few hundred ms). It will consider these in order:
 
@@ -290,8 +288,8 @@ Now LTE neighbor info
 -  Therefore, from the UE’s point of view:
 
 .. tip::
-   “I’m camped on ARFCN 871 (2G), PLMN 001–01 (which I just
-   marked forbidden), but I have no other candidate cell broadcasts in
+   “I’m registered on ARFCN 871 (2G), PLMN 001–01,
+   but I have no other candidate cell broadcasts in
    my BCCH. I must stay here until I find an alternative cell.” It will
    not hop back to LTE “by itself” unless it actually sees a
    higher‐priority (allowed) cell in the same BCCH’s neighbor‐list or it
