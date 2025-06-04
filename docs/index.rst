@@ -76,10 +76,14 @@ it looks like this:
      send_dl_dcch(&dl_dcch_msg, nullptr, &octet_str);
    }
 
+```|
 
 What this code does ?
----------------------
-Context: why ``send_connection_release()`` is called
+---------------------  
+
+Context:
+Why ``send_connection_release()``
+is called
 
 1. **RRC command Release role**
 
