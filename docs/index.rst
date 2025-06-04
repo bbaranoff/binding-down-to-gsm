@@ -169,8 +169,8 @@ Summary
 
    1. ``release_cause = other``
    2. ``redirected_carrier_info_present = true``
-   3. A **GERAN** redirection IE listing one or more 2G/EDGE frequencies
-      (pulled from parent->sib7.carrier_freqs_info_list[0).
+   3. A **GERAN** redirection IE listing one or more 2G/EDGE frequencies  
+      (pulled from ``parent->sib7.carrier_freqs_info_list[0]``).
 
 -  When the UE receives that RRC release with redirection, it
    immediately tears down LTE and camps onto the specified GSM/EDGE
