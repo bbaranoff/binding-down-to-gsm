@@ -29,7 +29,6 @@ import shlex
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.doctest']
-extensions = ["sphinx_rtd_dark_mode"]
 extensions = ["sphinxcontrib.mermaid"]
 default_dark_mode = True
 # Add any paths that contain templates here, relative to this directory.
