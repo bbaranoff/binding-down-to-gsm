@@ -283,8 +283,7 @@ would simply go look for LTE again—after all, its SIM says “I’m not
 allowed on 001–01, so I’ll reselect back to LTE.” But in practice, it
 usually does **not** instantaneously re‐camp to LTE, for two reasons:
 
-3.1. No LTE neighbor info (or LTE cell absent)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+No LTE neighbor info (or LTE cell absent)
 
 -  When you broadcast that fake 2G cell on ARFCN 871, you typically only
    advertise **GERAN frequencies** (and your fake PLMN 001–01). You do
