@@ -137,10 +137,10 @@ Why this makes the UE fall back to 2G for about one minute
              – type = GERAN
              – list of GERAN frequencies (from SIB7)
 
-   -  LTE RRC dictates that as soon as an RRC Connection Release with
-      redirection is received, the UE must tear down its LTE RRC session
-      **and** immediately perform a cell reselection to the given 2G
-      ARFCN(s).
+LTE RRC dictates that as soon as an RRC Connection Release with
+redirection is received, the UE must tear down its LTE RRC session
+**and** immediately perform a cell reselection to the given 2G
+ARFCN(s).
 
 3. **Step 3: UE camps on GERAN (Interception 2G)**
 
