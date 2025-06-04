@@ -43,7 +43,7 @@ Getting started
 
     graph TD
     Phone i 4G  --> Fallback 2G
-    Faalback 2G -- MitM --> Internet
+    Fallback 2G -- MitM --> Internet
 
 This is an explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
