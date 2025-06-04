@@ -257,12 +257,12 @@ continually looks for the “best” cell according to these priorities (per
 
 2.2. Cell‐ranking inside a given PLMN
 ----------------------------------
-   -  If multiple cells broadcast the same PLMN, the UE uses “cell
-      reselection” criteria (signal‐strength thresholds and ranking
-      parameters) to choose which one it likes best.
-   -  If a cell’s PLMN is on the SIM’s **Forbidden PLMN** (FPLMN) list,
-      the UE will normally treat that cell as “barred” and not camp on
-      it—unless it was forced by RRC redirection.
+-  If multiple cells broadcast the same PLMN, the UE uses “cell
+   reselection” criteria (signal‐strength thresholds and ranking
+   parameters) to choose which one it likes best.
+   If a cell’s PLMN is on the SIM’s **Forbidden PLMN** (FPLMN) list,
+   the UE will normally treat that cell as “barred” and not camp on
+   it—unless it was forced by RRC redirection.
 
 2.3 Forced RRC redirection overrides normal camp rules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
