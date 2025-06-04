@@ -290,10 +290,9 @@ RRC redirection first. In other words:
 .. tip::
    “I’m registered on ARFCN 871 (2G), PLMN 001–01,
    but I have no other candidate cell broadcasts in
-   my BCCH. I must stay here until I find an alternative cell.” It will
-   not hop back to LTE “by itself” unless it actually sees a
-   higher‐priority (allowed) cell in the same BCCH’s neighbor‐list or it
-   runs out of reacquisition timers entirely.
+   my BCCH. I must stay here until I find an alternative cell.”
+   When I try to handover I announce PLMN 00101 and all eNodeB
+   rejected me.
 
 4. Putting it all together
 --------------------------
