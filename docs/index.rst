@@ -276,12 +276,7 @@ RRC redirection first. In other words:
 3. Why the UE does *not* immediately fall back to 4G
 ----------------------------------------------------
 
-Once the UE has marked PLMN 001–01 as forbidden, you might think it
-would simply go look for LTE again—after all, its SIM says “I’m not
-allowed on 001–01, so I’ll reselect back to LTE.” But in practice, it
-usually does **not** instantaneously re‐camp to LTE, for two reasons:
-
-No LTE neighbor info (or LTE cell absent)
+Now LTE neighbor info
 
 -  A UE in idle on 2G waits for periodic “cell reselection” checks
    (every few hundred ms). It will consider these in order:
