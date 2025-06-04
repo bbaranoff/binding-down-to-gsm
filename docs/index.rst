@@ -33,7 +33,9 @@ Binding down to unsafe network
 Getting started
 ---------------
 
-.. mermaid::
+.. code-block:: rst
+
+    .. mermaid::
 
    sequenceDiagram
       participant Target_MS_UE
