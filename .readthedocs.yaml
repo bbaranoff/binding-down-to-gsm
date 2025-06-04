@@ -9,6 +9,10 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.12"
+    nodejs: "20"
+  jobs:
+    post_install:
+      - npm install -g @mermaid-js/mermaid-cli
     # You can also specify other tool versions:
     # nodejs: "20"
     # rust: "1.70"
@@ -40,7 +44,3 @@ python:
     - method: pip
       path: .
 
-extra_javascript:
-  - optionalConfig.js
-  - https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.min.js
-  - extra-loader.js
