@@ -31,7 +31,7 @@ import shlex
 # ones.
 extensions = ['sphinx.ext.doctest']
 extensions = ["sphinx_rtd_dark_mode"]
-extensions = ["sphinx-mermaid"]
+extensions = ["sphinxcontrib.mermaid"]
 default_dark_mode = True
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
