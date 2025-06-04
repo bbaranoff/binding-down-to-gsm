@@ -593,4 +593,5 @@ operational goals.
 
 At this point of the project you will stay some few long minutes 
 exposing your smartphone frames a good idea to go further is to increase timer
-T3245
+T3212 in osmocom msc and then the timer T3212 will determine how long you will be attached on the 00101 test network.
+Tested for approximatly 1/2h and phone not rewent in 4/5G and stays 2G :)
