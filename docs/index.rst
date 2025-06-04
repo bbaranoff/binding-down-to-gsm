@@ -237,19 +237,18 @@ At this point, the UE is sitting on a 2G cell broadcasting PLMN
 001–01—which is not in its allowed PLMN list—yet it does **not**
 immediately go back to LTE. Why?
 
---------------
 
 2. How the UE decides which PLMN to camp on in 2G
 -------------------------------------------------
 
-2.1. 2G cell selection / reselection basics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2.1 2G cell selection / reselection basics
+-------------------------------------------
 
 When a UE is in Idle mode (RRC IDLE on LTE or Idle on 2G), it
 continually looks for the “best” cell according to these priorities (per
 3GPP TS 23.122 and TS 36.304):
 
-2.2. Cell‐ranking inside a given PLMN
+2.2 Cell‐ranking inside a given PLMN
 ----------------------------------
 f multiple cells broadcast the same PLMN, the UE uses “cell
 reselection” criteria (signal‐strength thresholds and ranking
