@@ -317,7 +317,6 @@ usually does **not** instantaneously re‐camp to LTE, for two reasons:
    not hop back to LTE “by itself” unless it actually sees a
    higher‐priority (allowed) cell in the same BCCH’s neighbor‐list or it
    runs out of reacquisition timers entirely.
---------------
 
 4. Putting it all together
 --------------------------
