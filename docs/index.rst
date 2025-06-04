@@ -33,9 +33,8 @@ Binding down to unsafe network
 Getting started
 ---------------
 
-.. code-block:: rst
 
-    .. mermaid::
+.. mermaid::
 
    
    sequenceDiagram
