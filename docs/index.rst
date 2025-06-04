@@ -261,20 +261,20 @@ it—unless it was forced by RRC redirection.
 2.3 Forced RRC redirection overrides normal camp rules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  When an LTE eNodeB sends **“RRC Connection Release with
+When an LTE eNodeB sends **“RRC Connection Release with
 edirected_carrier_info → GERAN, PLMN = 001–01, ARFCN = 871”**, the
 UE immediately **aborts** whatever it was about to do in LTE (or 2G)
 and tunes to GERAN ARFCN 871 under PLMN 001–01.
 
- - Even if PLMN 001–01 is not in the UE’s allowed list, the UE obeys the
-   RRC redirection first. In other words:
+Even if PLMN 001–01 is not in the UE’s allowed list, the UE obeys the
+RRC redirection first. In other words:
 
-   1. **RRC release** → UE is told “drop your LTE RRC and go camp on
-      that 2G BCCH (ARFCN 871, MCC/MNC 001–01).”
-   2. UE tunes to 2G ARFCN 871, decodes SIBs, sees PLMN 001–01, and
-      camps—even though that PLMN is “forbidden” by its SIM. Because RRC
-      redirection has **higher priority**, the UE must at least attempt
-      to attach.
+1. **RRC release** → UE is told “drop your LTE RRC and go camp on
+   that 2G BCCH (ARFCN 871, MCC/MNC 001–01).”
+2. UE tunes to 2G ARFCN 871, decodes SIBs, sees PLMN 001–01, and
+   camps—even though that PLMN is “forbidden” by its SIM. Because RRC
+   redirection has **higher priority**, the UE must at least attempt
+   to attach.
 
 3. Why the UE does *not* immediately fall back to 4G
 ----------------------------------------------------
