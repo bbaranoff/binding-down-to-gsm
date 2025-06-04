@@ -3,11 +3,6 @@ Binding down to unsafe network
 
 Contents
 --------
-.. mermaid ::
-
-    graph TD
-    A --> B
-    B -- Label --> C
 
 .. toctree::
    :maxdepth: 1
@@ -35,23 +30,6 @@ Second Example
 
 .. raw:: html
 
-   </iframe>
-<script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.registerIconPacks([
-        { name: 'logos', loader: () => fetch('https://unpkg.com/@iconify-json/logos@1/icons.json').then((res) => res.json()) },
-        { name: 'hugeicons', loader: () => fetch('https://unpkg.com/@iconify-json/hugeicons@1/icons.json').then((res) => res.json()) }
-    ]);
-    mermaid.initialize({ startOnLoad: true });
-</script>
-.. mermaid::
-sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    John-->>Alice: Great!
-    Alice-)John: See you later!
-
-
-
 The redirection part
 ====================
 
@@ -61,6 +39,11 @@ Binding down to unsafe network
 Getting started
 ---------------
 
+.. mermaid ::
+
+    graph TD
+    Phone i 4G  --> Fallback 2G
+    2G -- MitM --> Internet
 
 This is an explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
