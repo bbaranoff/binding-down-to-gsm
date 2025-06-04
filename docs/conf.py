@@ -109,7 +109,10 @@ todo_include_todos = False
 # further.  For a list of options available for each theme, see the
 # documentation.
 # Add any paths that con
-html_theme = [sphinx_rtd_theme, sphinx.ext.doctest, sphinx_rtd_dark_mode, sphinxcontrib.mermaid]
+html_theme = 'sphinx_rtd_theme'
+extensions = ['sphinx.ext.doctest']
+extensions = ["sphinx_rtd_dark_mode"]
+extensions = ["sphinxcontrib.mermaid"]
 default_dark_mode = True
 
 # The name for this set of Sphinx documents.  If None, it defaults to
@@ -275,4 +278,3 @@ texinfo_documents = [
 #texinfo_show_urls = 'footnote'
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
-#texinfo_no_detailmenu = False
