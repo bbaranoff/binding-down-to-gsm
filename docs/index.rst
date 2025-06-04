@@ -249,7 +249,7 @@ continually looks for the “best” cell according to these priorities (per
 
 2.2 Cell‐ranking inside a given PLMN
 
-f multiple cells broadcast the same PLMN, the UE uses “cell
+If multiple cells broadcast the same PLMN, the UE uses “cell
 reselection” criteria (signal‐strength thresholds and ranking
 parameters) to choose which one it likes best.
 If a cell’s PLMN is on the SIM’s **Forbidden PLMN** (FPLMN) list,
@@ -290,12 +290,6 @@ No LTE neighbor info (or LTE cell absent)
    2. “Is there a same‐priority 2G/3G cell I like better?”
    3. “Is there any 3G/4G (UTRAN/E-UTRAN) neighbor in the SIBs I can
       reselect to?”
-
--  Because your fake 2G BCCH only lists itself (ARFCN 871, PLMN 001–01)
-   and no LTE neighbor, the UE’s reselection algorithm never “sees” any
-   E-UTRAN cell it could go to. Even if a real LTE cell from its
-   operator is physically close by, the UE doesn’t know about it—because
-   no neighbor‐list IE pointed to it.
 
 -  Therefore, from the UE’s point of view:
 
