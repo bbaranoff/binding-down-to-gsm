@@ -110,9 +110,7 @@ todo_include_todos = False
 # documentation.
 # Add any paths that con
 html_theme = 'sphinx_rtd_theme'
-extensions = ['sphinx.ext.doctest']
-extensions = ["sphinx_rtd_dark_mode"]
-extensions = ["sphinxcontrib.mermaid"]
+extensions = ['sphinx.ext.doctest','sphinx_rtd_dark_mode'.'sphinxcontrib.mermaid']
 default_dark_mode = True
 
 # The name for this set of Sphinx documents.  If None, it defaults to
