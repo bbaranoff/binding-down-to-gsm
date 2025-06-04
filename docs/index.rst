@@ -12,7 +12,7 @@ Contents
 PoC
 ---
 
-First example
+First example :
 
 .. raw:: html
 
@@ -22,7 +22,7 @@ First example
 
    </iframe>
 
-Second Example
+Second Example :
 
 .. raw:: html
 
