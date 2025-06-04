@@ -123,7 +123,7 @@ Why this makes the UE fall back to 2G for about one minute
    -  Immediately, the eNodeB runs ``send_connection_release()``.
       Because ``is_csfb == true``, the UE receives:
 
-      ::
+.. code::
 
          RRC Connection Release
            • release_cause = other
@@ -242,14 +242,13 @@ immediately go back to LTE. Why?
 -------------------------------------------------
 
 2.1 2G cell selection / reselection basics
--------------------------------------------
 
 When a UE is in Idle mode (RRC IDLE on LTE or Idle on 2G), it
 continually looks for the “best” cell according to these priorities (per
 3GPP TS 23.122 and TS 36.304):
 
 2.2 Cell‐ranking inside a given PLMN
-----------------------------------
+
 f multiple cells broadcast the same PLMN, the UE uses “cell
 reselection” criteria (signal‐strength thresholds and ranking
 parameters) to choose which one it likes best.
@@ -258,7 +257,6 @@ The UE will normally treat that cell as “barred” and not camp on
 it—unless it was forced by RRC redirection.
 
 2.3 Forced RRC redirection overrides normal camp rules
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When an LTE eNodeB sends **“RRC Connection Release with
 edirected_carrier_info → GERAN, PLMN = 001–01, ARFCN = 871”**, the
