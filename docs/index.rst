@@ -251,22 +251,22 @@ continually looks for the “best” cell according to these priorities (per
 
 2.2. Cell‐ranking inside a given PLMN
 ----------------------------------
--  If multiple cells broadcast the same PLMN, the UE uses “cell
-   reselection” criteria (signal‐strength thresholds and ranking
-   parameters) to choose which one it likes best.
-   If a cell’s PLMN is on the SIM’s **Forbidden PLMN** (FPLMN) list,
-   the UE will normally treat that cell as “barred” and not camp on
-   it—unless it was forced by RRC redirection.
+f multiple cells broadcast the same PLMN, the UE uses “cell
+reselection” criteria (signal‐strength thresholds and ranking
+parameters) to choose which one it likes best.
+If a cell’s PLMN is on the SIM’s **Forbidden PLMN** (FPLMN) list,
+The UE will normally treat that cell as “barred” and not camp on
+it—unless it was forced by RRC redirection.
 
 2.3 Forced RRC redirection overrides normal camp rules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  When an LTE eNodeB sends **“RRC Connection Release with
-   redirected_carrier_info → GERAN, PLMN = 001–01, ARFCN = 871”**, the
-   UE immediately **aborts** whatever it was about to do in LTE (or 2G)
-   and tunes to GERAN ARFCN 871 under PLMN 001–01.
+edirected_carrier_info → GERAN, PLMN = 001–01, ARFCN = 871”**, the
+UE immediately **aborts** whatever it was about to do in LTE (or 2G)
+and tunes to GERAN ARFCN 871 under PLMN 001–01.
 
--  Even if PLMN 001–01 is not in the UE’s allowed list, the UE obeys the
+ - Even if PLMN 001–01 is not in the UE’s allowed list, the UE obeys the
    RRC redirection first. In other words:
 
    1. **RRC release** → UE is told “drop your LTE RRC and go camp on
