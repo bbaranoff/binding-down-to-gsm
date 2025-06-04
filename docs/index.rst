@@ -575,11 +575,11 @@ band, as per your network setup.
 
    sib7 =
    {
-       t_resel_geran = 7;
+       t_resel_geran = 1;
        carrier_freqs_info_list =
        (
            {
-               cell_resel_prio = 7;
+               cell_resel_prio = 7; //maybe 1 ??
                ncc_permitted = 255;
                q_rx_lev_min = 0;
                thresh_x_high = 2;
