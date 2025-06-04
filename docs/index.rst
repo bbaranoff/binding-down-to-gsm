@@ -36,16 +36,19 @@ Getting started
 .. mermaid::
 
    sequenceDiagram
-      participant Alice
-      participant Bob
-      Alice->John: Hello John, how are you?
-      loop Healthcheck
-          John->John: Fight against hypochondria
-      end
-      Note right of John: Rational thoughts <br/>prevail...
-      John-->Alice: Great!
-      John->Bob: How about you?
-      Bob-->John: Jolly good!
+      participant Target_MS_UE
+      participant eNodeB
+      participant IMSI_Catcher
+      Target_MS_UE->eNodeB: Hello node, how are you?
+      eNodeB-->Target_MS_UE: Please Go back to GERAN
+      Target_MS_UE->eNodeB: I do
+      IMSI_Catcher-->Target_MS_UE: Attach to me
+      Target_MS_UE->IMSI_Catcher: Go back in 4G services
+      eNodeB-->Target_MS_UE: Please go back to GERAN
+      Target_MS_UE->IMSI_Catcher: You are on test net
+      Target_MS_UE-->eNodeB: hey is there test net here ?
+      eNodeB-->Target_MS_UE: You are searching test no test...
+      target_MS_UE->IMSI_Catcher: Can I stay ?
 
 This is an explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
