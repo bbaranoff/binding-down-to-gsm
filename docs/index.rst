@@ -33,12 +33,6 @@ Binding down to unsafe network
 Getting started
 ---------------
 
-.. mermaid ::
-
-    graph TD
-    Phone i 4G  --> Fallback 2G
-    Fallback 2G -- MitM --> Internet
-
 .. mermaid::
 
 sequenceDiagram
