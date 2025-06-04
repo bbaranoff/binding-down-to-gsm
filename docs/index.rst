@@ -79,8 +79,6 @@ it looks like this:
      send_dl_dcch(&dl_dcch_msg, nullptr, &octet_str);
    }
 
-```|
-
 What this code does ?
 ---------------------  
 
