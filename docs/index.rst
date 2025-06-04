@@ -33,12 +33,13 @@ Binding down to unsafe network
 Getting started
 ---------------
 
-.. mermaid::
+.. code:: mermaid
 
 sequenceDiagram
-   Alice->>John: Hello John, how are you?
-   John-->>Alice: Great!
-   Alice-)John: See you later!
+    participant Alice
+    participant Bob
+    Bob->>Alice: Hi Alice
+    Alice->>Bob: Hi Bob
 
 This is an explanation of how the UE is forced to fall
 back to a GERAN (2G/EDGE) cell—specifically because we broadcast a fake
