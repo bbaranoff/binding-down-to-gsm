@@ -314,8 +314,7 @@ RRC redirection first. In other words:
       allowed cell before vacating ARFCN 871—hence it stays there until
       such a cell appears.
 
-.. tip:: Thus, you see the UE stay on 2G 001–01 for several seconds (or even minutes, until it finds a different allowed PLMN / RAT). It does **not** “refall back to 4G” immediately, because from the UE’s perspective there simply isn’t any other *advertised* cell to go to—only that one forbidden‐PLMN 2G cell, which it can’t deregister from until it finds an alternative.
-
+.. tip:: Thus, you see the UE stay on 2G 001–01 for several seconds (or even minutes, until it finds a different allowed PLMN / RAT). It does **not** “refall back to 4G” immediately, because from the UE’s perspective there simply isn’t any other *advertised* cell to go
 I am hurry
 ==========
 
