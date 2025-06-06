@@ -24,6 +24,12 @@ Second Example :
 
    <iframe width="240" height="120" src="https://www.youtube.com/embed/Zn2KkymDGe0?si=Y6cqUFY9XJ6nhCR5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
 
+Making :
+
+.. raw:: html
+
+   <iframe width="240" height="120" src="https://www.youtube.com/watch?v=3cZM96enpFw&t=56s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+
 The redirection part
 ====================
 
@@ -595,3 +601,13 @@ At this point of the project you will stay some few long minutes
 exposing your smartphone frames a good idea to go further is to increase timer
 T3212 in osmocom msc and then the timer T3212 will determine how long you will be attached on the 00101 test network.
 Tested for approximatly 1/2h and phone not rewent in 4/5G and stays 2G :)
+
+
+.. raw:: html
+
+   <iframe width="240" height="120" src="https://youtu.be/X2NrNWfmvFM?si=jWaKw6mNZtPucgXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+.. raw:: html
+
+   <iframe width="240" height="120" src="https://youtu.be/v737GwK24GY?si=m29wtWeZdTRBu95D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
